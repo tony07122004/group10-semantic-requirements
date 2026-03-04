@@ -1,1 +1,21 @@
-
+Identifier,Requirement,Provenance,Comments
+FR01,List all Tony Award winners for a given year.,"A?O, NOMBRE, PREMIO",Basic query by year.
+FR02,Retrieve the winner of a specific award category in a given year.,"PREMIO, A?O, NOMBRE",Category-year lookup.
+FR03,List all award categories present in the dataset.,PREMIO,Identify available award types (Play vs Musical).
+FR04,Retrieve all works for which a specific person won a Tony Award.,"NOMBRE, OBRA",Person¨Cwork relationship.
+FR05,Count how many Tony Awards a person has won.,"NOMBRE, A?O",Aggregation per person.
+FR06,Identify people who have won the award multiple times.,"NOMBRE, A?O",Detect repeated winners.
+FR07,List all works that have received a Tony Award.,"OBRA, PREMIO",Production-based analysis.
+FR08,Retrieve the winner associated with a specific work.,"OBRA, NOMBRE",Reverse lookup from work to person.
+FR09,Retrieve the winners for a specific award category across different years.,"PREMIO, A?O, NOMBRE",Historical analysis of categories.
+FR10,Determine the earliest and latest years represented in the dataset.,A?O,Dataset temporal coverage.
+FR11,List all winners belonging to the feminine category.,"CATEGORIA, NOMBRE",Gender filtering.
+FR12,List all winners belonging to the masculine category.,"CATEGORIA, NOMBRE",Gender filtering.
+FR13,Count the number of awards won by each gender.,"CATEGORIA, NOMBRE",Gender distribution analysis.
+FR14,Retrieve all winners of a given work across different award categories.,"OBRA, PREMIO, NOMBRE",Work-centered exploration.
+FR15,Identify works that have won awards in multiple years.,"OBRA, A?O",Detect recurring productions.
+FR16,Retrieve all winners within a specific award type (Play or Musical).,"PREMIO, NOMBRE",Distinguish theatre vs musical awards.
+FR17,List winners by gender for a specific year.,"A?O, CATEGORIA, NOMBRE",Gender comparison per year.
+FR18,Generate statistics of awards per year.,"A?O, PREMIO",Annual aggregation.
+FR19,"Detect duplicate records with the same year, award and winner.","A?O, PREMIO, NOMBRE",Data quality validation.
+FR20,Retrieve the complete historical record of a given award category ordered by year.,"PREMIO, A?O, NOMBRE, OBRA",Full historical timeline of the category.

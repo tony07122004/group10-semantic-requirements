@@ -1,5 +1,0 @@
-id,requirement_type,priority,description,source,related_fields,notes
-R1,Functional,Must,The semantic resource must represent Tony Awards ceremonies with year and edition.,Initial dataset,"year, ceremony",
-R2,Functional,Must,The semantic resource must represent awards and categories (e.g., Best Musical).,Initial dataset,"award, category",
-R3,Functional,Should,The semantic resource should link nominees to productions and roles.,Initial dataset,"nominee, production, role",
-R4,Non-Functional,Must,The repository must be public and include docs and dataset links for reproducibility.,Assignment,"repo, docs, links",
