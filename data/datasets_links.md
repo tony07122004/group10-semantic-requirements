@@ -1,7 +1,7 @@
 # Datasets links
 
 ## Initial dataset
-- https://datasetsearch.research.google.com/search?src=0&query=tony%20awards&docid=L2cvMTFyYnNid21uMw%3D%3D
+- https://www.ibdb.com/awards/
 
 ## Additional datasets found
-- <Dataset name> — <URL> — <short note>
+- https://www.ibdb.com/awards/
