@@ -1,0 +1,77 @@
+@prefix exsh: <http://example.org/shacl/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix myOnt: <http://example.org/ontology/tony#> .
+@prefix schema: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[] a sh:ValidationReport ;
+    sh:conforms false ;
+    sh:result [ a sh:ValidationResult ;
+            sh:focusNode <http://example.org/resource/Bad_Winning_Wrong_Gender> ;
+            sh:resultMessage "Gender category must be either masculina or femenina." ;
+            sh:resultPath myOnt:genderCategory ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:InConstraintComponent ;
+            sh:sourceShape exsh:GenderCategoryPropertyShape ;
+            sh:value "otro" ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <http://example.org/resource/Bad_Winning_No_Winner> ;
+            sh:resultMessage "Every award winning record must have exactly one winner." ;
+            sh:resultPath myOnt:winner ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape exsh:WinnerPropertyShape ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <http://example.org/resource/Bad_Category_No_Label> ;
+            sh:resultMessage "Every award category must have one label containing Play or Musical." ;
+            sh:resultPath skos:prefLabel ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape [ sh:datatype xsd:string ;
+                    sh:maxCount 1 ;
+                    sh:message "Every award category must have one label containing Play or Musical." ;
+                    sh:minCount 1 ;
+                    sh:path skos:prefLabel ;
+                    sh:pattern "Play|Musical" ] ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <http://example.org/resource/Bad_Work_No_Name> ;
+            sh:resultMessage "Every work must have exactly one non-empty name." ;
+            sh:resultPath schema:name ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape [ sh:datatype xsd:string ;
+                    sh:maxCount 1 ;
+                    sh:message "Every work must have exactly one non-empty name." ;
+                    sh:minCount 1 ;
+                    sh:minLength 1 ;
+                    sh:path schema:name ] ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <http://example.org/resource/Bad_Winning_Wrong_Year> ;
+            sh:resultMessage "Award year must be an integer between 1982 and 2015." ;
+            sh:resultPath myOnt:awardYear ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MaxInclusiveConstraintComponent ;
+            sh:sourceShape exsh:AwardYearPropertyShape ;
+            sh:value 2020 ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <http://example.org/resource/Bad_Winning_No_Work> ;
+            sh:resultMessage "Every award winning record must be linked to exactly one work." ;
+            sh:resultPath myOnt:awardedForWork ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape exsh:AwardedForWorkPropertyShape ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <http://example.org/resource/Bad_Person_No_Name> ;
+            sh:resultMessage "Every person must have exactly one non-empty name." ;
+            sh:resultPath foaf:name ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape [ sh:datatype xsd:string ;
+                    sh:maxCount 1 ;
+                    sh:message "Every person must have exactly one non-empty name." ;
+                    sh:minCount 1 ;
+                    sh:minLength 1 ;
+                    sh:path foaf:name ] ] .
+
