@@ -1,0 +1,81 @@
+@prefix ex: <http://example.org/resource/> .
+@prefix myOnt: <http://example.org/ontology/tony#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix schema: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:Helen_Mirren a foaf:Person ;
+    foaf:name "Helen Mirren" .
+
+ex:Michael_Cerveris a foaf:Person ;
+    foaf:name "Michael Cerveris" .
+
+ex:The_Audience a schema:CreativeWork ;
+    schema:name "The Audience" .
+
+ex:Fun_Home a schema:CreativeWork ;
+    schema:name "Fun Home" .
+
+ex:Best_Actress_Play a myOnt:AwardCategory ;
+    skos:prefLabel "Tony Award Best Actress in a Play" .
+
+ex:Best_Actor_Musical a myOnt:AwardCategory ;
+    skos:prefLabel "Tony Award Best Actor in a Musical" .
+
+ex:Winning_2015_Helen_Mirren
+    a myOnt:AwardWinning ;
+    myOnt:winner ex:Helen_Mirren ;
+    myOnt:awardedForWork ex:The_Audience ;
+    myOnt:hasAwardCategory ex:Best_Actress_Play ;
+    myOnt:awardYear 2015 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_2015_Michael_Cerveris
+    a myOnt:AwardWinning ;
+    myOnt:winner ex:Michael_Cerveris ;
+    myOnt:awardedForWork ex:Fun_Home ;
+    myOnt:hasAwardCategory ex:Best_Actor_Musical ;
+    myOnt:awardYear 2015 ;
+    myOnt:genderCategory "masculina" .
+
+# Incorrect data examples for validation
+
+ex:Bad_Person_No_Name
+    a foaf:Person .
+
+ex:Bad_Work_No_Name
+    a schema:CreativeWork .
+
+ex:Bad_Category_No_Label
+    a myOnt:AwardCategory .
+
+ex:Bad_Winning_No_Winner
+    a myOnt:AwardWinning ;
+    myOnt:awardedForWork ex:The_Audience ;
+    myOnt:hasAwardCategory ex:Best_Actress_Play ;
+    myOnt:awardYear 2015 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Bad_Winning_Wrong_Year
+    a myOnt:AwardWinning ;
+    myOnt:winner ex:Helen_Mirren ;
+    myOnt:awardedForWork ex:The_Audience ;
+    myOnt:hasAwardCategory ex:Best_Actress_Play ;
+    myOnt:awardYear 2020 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Bad_Winning_Wrong_Gender
+    a myOnt:AwardWinning ;
+    myOnt:winner ex:Michael_Cerveris ;
+    myOnt:awardedForWork ex:Fun_Home ;
+    myOnt:hasAwardCategory ex:Best_Actor_Musical ;
+    myOnt:awardYear 2015 ;
+    myOnt:genderCategory "otro" .
+
+ex:Bad_Winning_No_Work
+    a myOnt:AwardWinning ;
+    myOnt:winner ex:Helen_Mirren ;
+    myOnt:hasAwardCategory ex:Best_Actress_Play ;
+    myOnt:awardYear 2015 ;
+    myOnt:genderCategory "femenina" .
