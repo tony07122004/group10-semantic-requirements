@@ -14,7 +14,11 @@ This class represents each concrete award winning record in the dataset. Each re
 
 This model is more accurate because the dataset rows represent award-winning events, not only persons or works.
 
-## Implemented SHACL restrictions
+![Improved conceptual model](diagrama_corregido.png)
+
+## Implemented SHACL shapes and restrictions
+
+The SHACL file contains several shapes checking different kinds of constraints: cardinality, datatype, class, pattern, value range and controlled values.
 
 1. Every `foaf:Person` must have exactly one non-empty `foaf:name`.
 2. Every `schema:CreativeWork` must have exactly one non-empty `schema:name`.
