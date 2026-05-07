@@ -1,0 +1,104 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix myOnt: <http://example.org/ontology/tony#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix schema: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix exsh: <http://example.org/shacl/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+exsh:PersonShape
+    a sh:NodeShape ;
+    sh:targetClass foaf:Person ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [
+        sh:path foaf:name ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:minLength 1 ;
+        sh:message "Every person must have exactly one non-empty name." ;
+    ] .
+
+exsh:CreativeWorkShape
+    a sh:NodeShape ;
+    sh:targetClass schema:CreativeWork ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [
+        sh:path schema:name ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:minLength 1 ;
+        sh:message "Every work must have exactly one non-empty name." ;
+    ] .
+
+exsh:AwardCategoryShape
+    a sh:NodeShape ;
+    sh:targetClass myOnt:AwardCategory ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [
+        sh:path skos:prefLabel ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:pattern "Play|Musical" ;
+        sh:message "Every award category must have one label containing Play or Musical." ;
+    ] .
+
+exsh:AwardWinningShape
+    a sh:NodeShape ;
+    sh:targetClass myOnt:AwardWinning ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property exsh:WinnerPropertyShape ;
+    sh:property exsh:AwardedForWorkPropertyShape ;
+    sh:property exsh:HasAwardCategoryPropertyShape ;
+    sh:property exsh:AwardYearPropertyShape ;
+    sh:property exsh:GenderCategoryPropertyShape .
+
+exsh:WinnerPropertyShape
+    a sh:PropertyShape ;
+    sh:path myOnt:winner ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:class foaf:Person ;
+    sh:message "Every award winning record must have exactly one winner." .
+
+exsh:AwardedForWorkPropertyShape
+    a sh:PropertyShape ;
+    sh:path myOnt:awardedForWork ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:class schema:CreativeWork ;
+    sh:message "Every award winning record must be linked to exactly one work." .
+
+exsh:HasAwardCategoryPropertyShape
+    a sh:PropertyShape ;
+    sh:path myOnt:hasAwardCategory ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:class myOnt:AwardCategory ;
+    sh:message "Every award winning record must have exactly one award category." .
+
+exsh:AwardYearPropertyShape
+    a sh:PropertyShape ;
+    sh:path myOnt:awardYear ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:datatype xsd:integer ;
+    sh:minInclusive 1982 ;
+    sh:maxInclusive 2015 ;
+    sh:message "Award year must be an integer between 1982 and 2015." .
+
+exsh:GenderCategoryPropertyShape
+    a sh:PropertyShape ;
+    sh:path myOnt:genderCategory ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:datatype xsd:string ;
+    sh:in ( "masculina" "femenina" ) ;
+    sh:message "Gender category must be either masculina or femenina." .
