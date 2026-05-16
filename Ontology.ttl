@@ -1,5 +1,5 @@
-@prefix : <http://example.org/ontology/tony#> .
-@prefix myOnt: <http://example.org/ontology/tony#> .
+@prefix : <https://w3id.org/tony-awards/ontology#> .
+@prefix myOnt: <https://w3id.org/tony-awards/ontology#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix schema: <http://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
@@ -10,18 +10,21 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 
-<http://example.org/ontology/tony>
+<https://w3id.org/tony-awards/ontology>
     a owl:Ontology ;
     dcterms:title "Tony Awards Winners Ontology"@en ;
     dcterms:creator "Group 10"@en ;
     dcterms:description "Ontology for representing Tony Award winners from 1982 to 2015, including winners, works, award categories, years and gender categories."@en ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     vann:preferredNamespacePrefix "myOnt" ;
-    vann:preferredNamespaceUri "http://example.org/ontology/tony#" ;
+    vann:preferredNamespaceUri "https://w3id.org/tony-awards/ontology#" ;
+    owl:versionInfo "1.0.0" ;
     rdfs:label "Tony Awards Winners Ontology"@en ;
     rdfs:comment "This ontology models Tony Award winning records using an n-ary relation represented by myOnt:AwardWinning."@en .
 
+
 # Reused external classes
+
 
 foaf:Person
     a owl:Class ;
@@ -36,6 +39,12 @@ schema:CreativeWork
 
 # Classes defined in this ontology
 
+
+myOnt:DatasetRecord
+    a owl:Class ;
+    rdfs:label "Dataset record"@en ;
+    rdfs:comment "A record extracted from the original Tony Awards dataset."@en .
+
 myOnt:TonyAward
     a owl:Class ;
     rdfs:label "Tony Award"@en ;
@@ -43,6 +52,7 @@ myOnt:TonyAward
 
 myOnt:AwardWinning
     a owl:Class ;
+    rdfs:subClassOf myOnt:DatasetRecord ;
     rdfs:label "Award winning record"@en ;
     rdfs:comment "A concrete record representing that a person won a Tony Award in a given year for a specific work and category."@en .
 
@@ -105,10 +115,6 @@ myOnt:FeminineCategory
     rdfs:label "Feminine category"@en ;
     rdfs:comment "Feminine award category."@en .
 
-myOnt:DatasetRecord
-    a owl:Class ;
-    rdfs:label "Dataset record"@en ;
-    rdfs:comment "A record extracted from the original Tony Awards dataset."@en .
 
 # Object properties
 
@@ -150,6 +156,7 @@ myOnt:belongsToAward
 
 # Datatype properties
 
+
 myOnt:awardYear
     a owl:DatatypeProperty , owl:FunctionalProperty ;
     rdfs:domain myOnt:AwardWinning ;
@@ -178,6 +185,13 @@ myOnt:categoryType
     rdfs:label "category type"@en ;
     rdfs:comment "Type of award category, for example Play or Musical."@en .
 
+myOnt:categoryLabel
+    a owl:DatatypeProperty ;
+    rdfs:domain myOnt:AwardCategory ;
+    rdfs:range xsd:string ;
+    rdfs:label "category label"@en ;
+    rdfs:comment "Literal label used to identify an award category."@en .
+
 foaf:name
     a owl:DatatypeProperty ;
     rdfs:domain foaf:Person ;
@@ -192,12 +206,18 @@ schema:name
     rdfs:label "name"@en ;
     rdfs:comment "Name of the awarded work. It corresponds to the OBRA column in the dataset."@en .
 
+
+# Annotation properties
+
+
 skos:prefLabel
     a owl:AnnotationProperty ;
     rdfs:label "preferred label"@en ;
     rdfs:comment "Preferred lexical label for an award category."@en .
 
+
 # Restrictions
+
 
 myOnt:AwardWinning
     rdfs:subClassOf
@@ -218,6 +238,12 @@ myOnt:AwardWinning
             owl:onProperty myOnt:hasAwardCategory ;
             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onClass myOnt:AwardCategory
+        ] ,
+        [
+            a owl:Restriction ;
+            owl:onProperty myOnt:hasGenderCategory ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass myOnt:GenderCategory
         ] ,
         [
             a owl:Restriction ;
@@ -254,12 +280,19 @@ myOnt:AwardCategory
     rdfs:subClassOf
         [
             a owl:Restriction ;
-            owl:onProperty skos:prefLabel ;
+            owl:onProperty myOnt:categoryLabel ;
             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onDataRange xsd:string
         ] .
 
+
 # Individuals
+
+
+myOnt:TonyAwards
+    a owl:NamedIndividual , myOnt:TonyAward ;
+    rdfs:label "Tony Awards"@en ;
+    rdfs:comment "The general Tony Awards entity to which all award categories belong."@en .
 
 myOnt:Masculine
     a owl:NamedIndividual , myOnt:MasculineCategory ;
@@ -270,24 +303,32 @@ myOnt:Feminine
     skos:prefLabel "femenina"@es .
 
 myOnt:BestActressInAPlay
-    a owl:NamedIndividual , myOnt:PlayAward , myOnt:BestActressAward ;
+    a owl:NamedIndividual , myOnt:AwardCategory , myOnt:PlayAward , myOnt:BestActressAward ;
     skos:prefLabel "Tony Award Best Actress in a Play"@en ;
-    myOnt:categoryType "Play" .
+    myOnt:categoryLabel "Tony Award Best Actress in a Play" ;
+    myOnt:categoryType "Play" ;
+    myOnt:belongsToAward myOnt:TonyAwards .
 
 myOnt:BestActorInAPlay
-    a owl:NamedIndividual , myOnt:PlayAward , myOnt:BestActorAward ;
+    a owl:NamedIndividual , myOnt:AwardCategory , myOnt:PlayAward , myOnt:BestActorAward ;
     skos:prefLabel "Tony Award Best Actor in a Play"@en ;
-    myOnt:categoryType "Play" .
+    myOnt:categoryLabel "Tony Award Best Actor in a Play" ;
+    myOnt:categoryType "Play" ;
+    myOnt:belongsToAward myOnt:TonyAwards .
 
 myOnt:BestActressInAMusical
-    a owl:NamedIndividual , myOnt:MusicalAward , myOnt:BestActressAward ;
+    a owl:NamedIndividual , myOnt:AwardCategory , myOnt:MusicalAward , myOnt:BestActressAward ;
     skos:prefLabel "Tony Award Best Actress in a Musical"@en ;
-    myOnt:categoryType "Musical" .
+    myOnt:categoryLabel "Tony Award Best Actress in a Musical" ;
+    myOnt:categoryType "Musical" ;
+    myOnt:belongsToAward myOnt:TonyAwards .
 
 myOnt:BestActorInAMusical
-    a owl:NamedIndividual , myOnt:MusicalAward , myOnt:BestActorAward ;
+    a owl:NamedIndividual , myOnt:AwardCategory , myOnt:MusicalAward , myOnt:BestActorAward ;
     skos:prefLabel "Tony Award Best Actor in a Musical"@en ;
-    myOnt:categoryType "Musical" .
+    myOnt:categoryLabel "Tony Award Best Actor in a Musical" ;
+    myOnt:categoryType "Musical" ;
+    myOnt:belongsToAward myOnt:TonyAwards .
 
 myOnt:HelenMirren
     a owl:NamedIndividual , foaf:Person ;
