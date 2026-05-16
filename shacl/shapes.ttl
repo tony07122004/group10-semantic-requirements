@@ -1,5 +1,5 @@
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix myOnt: <http://example.org/ontology/tony#> .
+@prefix myOnt: <https://w3id.org/tony-awards/ontology#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix schema: <http://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
@@ -39,9 +39,9 @@ exsh:AwardCategoryShape
     a sh:NodeShape ;
     sh:targetClass myOnt:AwardCategory ;
     sh:closed true ;
-    sh:ignoredProperties ( rdf:type ) ;
+    sh:ignoredProperties ( rdf:type skos:prefLabel ) ;
     sh:property [
-        sh:path skos:prefLabel ;
+        sh:path myOnt:categoryLabel ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:datatype xsd:string ;
