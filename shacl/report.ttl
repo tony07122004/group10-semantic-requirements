@@ -1,40 +1,131 @@
 @prefix exsh: <http://example.org/shacl/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix myOnt: <http://example.org/ontology/tony#> .
+@prefix myOnt: <https://w3id.org/tony-awards/ontology#> .
 @prefix schema: <http://schema.org/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 [] a sh:ValidationReport ;
     sh:conforms false ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode <http://example.org/resource/Bad_Winning_Wrong_Gender> ;
-            sh:resultMessage "Gender category must be either masculina or femenina." ;
-            sh:resultPath myOnt:genderCategory ;
+            sh:focusNode <http://example.org/resource/Winning_2015_Helen_Mirren> ;
+            sh:resultMessage "Node ex:Winning_2015_Helen_Mirren is closed. It cannot have value: Literal(\"Winning_2015_Helen_Mirren\")" ;
+            sh:resultPath myOnt:recordIdentifier ;
             sh:resultSeverity sh:Violation ;
-            sh:sourceConstraintComponent sh:InConstraintComponent ;
-            sh:sourceShape exsh:GenderCategoryPropertyShape ;
-            sh:value "otro" ],
+            sh:sourceConstraintComponent sh:ClosedConstraintComponent ;
+            sh:sourceShape exsh:AwardWinningShape ;
+            sh:value "Winning_2015_Helen_Mirren" ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <http://example.org/resource/Winning_2015_Helen_Mirren> ;
+            sh:resultMessage "Node ex:Winning_2015_Helen_Mirren is closed. It cannot have value: ex:Feminine" ;
+            sh:resultPath myOnt:hasGenderCategory ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:ClosedConstraintComponent ;
+            sh:sourceShape exsh:AwardWinningShape ;
+            sh:value <http://example.org/resource/Feminine> ],
         [ a sh:ValidationResult ;
             sh:focusNode <http://example.org/resource/Bad_Winning_No_Winner> ;
-            sh:resultMessage "Every award winning record must have exactly one winner." ;
-            sh:resultPath myOnt:winner ;
+            sh:resultMessage "Node ex:Bad_Winning_No_Winner is closed. It cannot have value: ex:Feminine" ;
+            sh:resultPath myOnt:hasGenderCategory ;
             sh:resultSeverity sh:Violation ;
-            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
-            sh:sourceShape exsh:WinnerPropertyShape ],
+            sh:sourceConstraintComponent sh:ClosedConstraintComponent ;
+            sh:sourceShape exsh:AwardWinningShape ;
+            sh:value <http://example.org/resource/Feminine> ],
         [ a sh:ValidationResult ;
             sh:focusNode <http://example.org/resource/Bad_Category_No_Label> ;
             sh:resultMessage "Every award category must have one label containing Play or Musical." ;
-            sh:resultPath skos:prefLabel ;
+            sh:resultPath myOnt:categoryLabel ;
             sh:resultSeverity sh:Violation ;
             sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
             sh:sourceShape [ sh:datatype xsd:string ;
                     sh:maxCount 1 ;
                     sh:message "Every award category must have one label containing Play or Musical." ;
                     sh:minCount 1 ;
-                    sh:path skos:prefLabel ;
+                    sh:path myOnt:categoryLabel ;
                     sh:pattern "Play|Musical" ] ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <http://example.org/resource/Bad_Person_No_Name> ;
+            sh:resultMessage "Every person must have exactly one non-empty name." ;
+            sh:resultPath foaf:name ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape [ sh:datatype xsd:string ;
+                    sh:maxCount 1 ;
+                    sh:message "Every person must have exactly one non-empty name." ;
+                    sh:minCount 1 ;
+                    sh:minLength 1 ;
+                    sh:path foaf:name ] ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <http://example.org/resource/Bad_Winning_No_Winner> ;
+            sh:resultMessage "Node ex:Bad_Winning_No_Winner is closed. It cannot have value: Literal(\"Bad_Winning_No_Winner\")" ;
+            sh:resultPath myOnt:recordIdentifier ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:ClosedConstraintComponent ;
+            sh:sourceShape exsh:AwardWinningShape ;
+            sh:value "Bad_Winning_No_Winner" ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <http://example.org/resource/Bad_Winning_No_Work> ;
+            sh:resultMessage "Node ex:Bad_Winning_No_Work is closed. It cannot have value: Literal(\"Bad_Winning_No_Work\")" ;
+            sh:resultPath myOnt:recordIdentifier ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:ClosedConstraintComponent ;
+            sh:sourceShape exsh:AwardWinningShape ;
+            sh:value "Bad_Winning_No_Work" ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <http://example.org/resource/Bad_Winning_Wrong_Gender> ;
+            sh:resultMessage "Node ex:Bad_Winning_Wrong_Gender is closed. It cannot have value: Literal(\"Bad_Winning_Wrong_Gender\")" ;
+            sh:resultPath myOnt:recordIdentifier ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:ClosedConstraintComponent ;
+            sh:sourceShape exsh:AwardWinningShape ;
+            sh:value "Bad_Winning_Wrong_Gender" ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <http://example.org/resource/Best_Actress_Play> ;
+            sh:resultMessage "Node ex:Best_Actress_Play is closed. It cannot have value: Literal(\"Play\")" ;
+            sh:resultPath myOnt:categoryType ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:ClosedConstraintComponent ;
+            sh:sourceShape exsh:AwardCategoryShape ;
+            sh:value "Play" ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <http://example.org/resource/Winning_2015_Michael_Cerveris> ;
+            sh:resultMessage "Node ex:Winning_2015_Michael_Cerveris is closed. It cannot have value: ex:Masculine" ;
+            sh:resultPath myOnt:hasGenderCategory ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:ClosedConstraintComponent ;
+            sh:sourceShape exsh:AwardWinningShape ;
+            sh:value <http://example.org/resource/Masculine> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <http://example.org/resource/Bad_Winning_No_Work> ;
+            sh:resultMessage "Every award winning record must be linked to exactly one work." ;
+            sh:resultPath myOnt:awardedForWork ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape exsh:AwardedForWorkPropertyShape ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <http://example.org/resource/Bad_Winning_Wrong_Year> ;
+            sh:resultMessage "Award year must be an integer between 1982 and 2015." ;
+            sh:resultPath myOnt:awardYear ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MaxInclusiveConstraintComponent ;
+            sh:sourceShape exsh:AwardYearPropertyShape ;
+            sh:value 2020 ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <http://example.org/resource/Best_Actor_Musical> ;
+            sh:resultMessage "Node ex:Best_Actor_Musical is closed. It cannot have value: Literal(\"Musical\")" ;
+            sh:resultPath myOnt:categoryType ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:ClosedConstraintComponent ;
+            sh:sourceShape exsh:AwardCategoryShape ;
+            sh:value "Musical" ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <http://example.org/resource/Bad_Winning_No_Work> ;
+            sh:resultMessage "Node ex:Bad_Winning_No_Work is closed. It cannot have value: ex:Feminine" ;
+            sh:resultPath myOnt:hasGenderCategory ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:ClosedConstraintComponent ;
+            sh:sourceShape exsh:AwardWinningShape ;
+            sh:value <http://example.org/resource/Feminine> ],
         [ a sh:ValidationResult ;
             sh:focusNode <http://example.org/resource/Bad_Work_No_Name> ;
             sh:resultMessage "Every work must have exactly one non-empty name." ;
@@ -48,30 +139,50 @@
                     sh:minLength 1 ;
                     sh:path schema:name ] ],
         [ a sh:ValidationResult ;
+            sh:focusNode <http://example.org/resource/Bad_Winning_No_Winner> ;
+            sh:resultMessage "Every award winning record must have exactly one winner." ;
+            sh:resultPath myOnt:winner ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
+            sh:sourceShape exsh:WinnerPropertyShape ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <http://example.org/resource/Bad_Winning_Wrong_Gender> ;
+            sh:resultMessage "Gender category must be either masculina or femenina." ;
+            sh:resultPath myOnt:genderCategory ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:InConstraintComponent ;
+            sh:sourceShape exsh:GenderCategoryPropertyShape ;
+            sh:value "otro" ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <http://example.org/resource/Winning_2015_Michael_Cerveris> ;
+            sh:resultMessage "Node ex:Winning_2015_Michael_Cerveris is closed. It cannot have value: Literal(\"Winning_2015_Michael_Cerveris\")" ;
+            sh:resultPath myOnt:recordIdentifier ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:ClosedConstraintComponent ;
+            sh:sourceShape exsh:AwardWinningShape ;
+            sh:value "Winning_2015_Michael_Cerveris" ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <http://example.org/resource/Bad_Winning_Wrong_Gender> ;
+            sh:resultMessage "Node ex:Bad_Winning_Wrong_Gender is closed. It cannot have value: ex:Masculine" ;
+            sh:resultPath myOnt:hasGenderCategory ;
+            sh:resultSeverity sh:Violation ;
+            sh:sourceConstraintComponent sh:ClosedConstraintComponent ;
+            sh:sourceShape exsh:AwardWinningShape ;
+            sh:value <http://example.org/resource/Masculine> ],
+        [ a sh:ValidationResult ;
             sh:focusNode <http://example.org/resource/Bad_Winning_Wrong_Year> ;
-            sh:resultMessage "Award year must be an integer between 1982 and 2015." ;
-            sh:resultPath myOnt:awardYear ;
+            sh:resultMessage "Node ex:Bad_Winning_Wrong_Year is closed. It cannot have value: Literal(\"Bad_Winning_Wrong_Year\")" ;
+            sh:resultPath myOnt:recordIdentifier ;
             sh:resultSeverity sh:Violation ;
-            sh:sourceConstraintComponent sh:MaxInclusiveConstraintComponent ;
-            sh:sourceShape exsh:AwardYearPropertyShape ;
-            sh:value 2020 ],
+            sh:sourceConstraintComponent sh:ClosedConstraintComponent ;
+            sh:sourceShape exsh:AwardWinningShape ;
+            sh:value "Bad_Winning_Wrong_Year" ],
         [ a sh:ValidationResult ;
-            sh:focusNode <http://example.org/resource/Bad_Winning_No_Work> ;
-            sh:resultMessage "Every award winning record must be linked to exactly one work." ;
-            sh:resultPath myOnt:awardedForWork ;
+            sh:focusNode <http://example.org/resource/Bad_Winning_Wrong_Year> ;
+            sh:resultMessage "Node ex:Bad_Winning_Wrong_Year is closed. It cannot have value: ex:Feminine" ;
+            sh:resultPath myOnt:hasGenderCategory ;
             sh:resultSeverity sh:Violation ;
-            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
-            sh:sourceShape exsh:AwardedForWorkPropertyShape ],
-        [ a sh:ValidationResult ;
-            sh:focusNode <http://example.org/resource/Bad_Person_No_Name> ;
-            sh:resultMessage "Every person must have exactly one non-empty name." ;
-            sh:resultPath foaf:name ;
-            sh:resultSeverity sh:Violation ;
-            sh:sourceConstraintComponent sh:MinCountConstraintComponent ;
-            sh:sourceShape [ sh:datatype xsd:string ;
-                    sh:maxCount 1 ;
-                    sh:message "Every person must have exactly one non-empty name." ;
-                    sh:minCount 1 ;
-                    sh:minLength 1 ;
-                    sh:path foaf:name ] ] .
+            sh:sourceConstraintComponent sh:ClosedConstraintComponent ;
+            sh:sourceShape exsh:AwardWinningShape ;
+            sh:value <http://example.org/resource/Feminine> ] .
 
