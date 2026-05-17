@@ -50,12 +50,6 @@ myOnt:TonyAward
     rdfs:label "Tony Award"@en ;
     rdfs:comment "General class representing Tony Awards."@en .
 
-myOnt:AwardWinning
-    a owl:Class ;
-    rdfs:subClassOf myOnt:DatasetRecord ;
-    rdfs:label "Award winning record"@en ;
-    rdfs:comment "A concrete record representing that a person won a Tony Award in a given year for a specific work and category."@en .
-
 myOnt:AwardCategory
     a owl:Class ;
     rdfs:subClassOf myOnt:TonyAward ;
