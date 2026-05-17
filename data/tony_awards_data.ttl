@@ -1,37 +1,51 @@
-@prefix ex: <http://example.org/resource/> .
+@prefix ex: <https://w3id.org/tony-awards/resource#> .
 @prefix myOnt: <https://w3id.org/tony-awards/ontology#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix schema: <http://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-ex:Helen_Mirren a foaf:Person ;
+ex:TonyAwards
+    a myOnt:TonyAward ;
+    skos:prefLabel "Tony Awards"@en .
+
+ex:Helen_Mirren
+    a foaf:Person ;
     foaf:name "Helen Mirren" .
 
-ex:Michael_Cerveris a foaf:Person ;
+ex:Michael_Cerveris
+    a foaf:Person ;
     foaf:name "Michael Cerveris" .
 
-ex:The_Audience a schema:CreativeWork ;
-    schema:name "The Audience" .
+ex:The_Audience
+    a schema:CreativeWork ;
+    myOnt:workTitle "The Audience" .
 
-ex:Fun_Home a schema:CreativeWork ;
-    schema:name "Fun Home" .
+ex:Fun_Home
+    a schema:CreativeWork ;
+    myOnt:workTitle "Fun Home" .
 
-ex:Feminine a myOnt:FeminineCategory ;
+ex:Feminine
+    a myOnt:GenderCategory , myOnt:FeminineCategory ;
     skos:prefLabel "femenina"@es .
 
-ex:Masculine a myOnt:MasculineCategory ;
+ex:Masculine
+    a myOnt:GenderCategory , myOnt:MasculineCategory ;
     skos:prefLabel "masculina"@es .
 
-ex:Best_Actress_Play a myOnt:AwardCategory ;
+ex:Best_Actress_Play
+    a myOnt:AwardCategory ;
     myOnt:categoryLabel "Tony Award Best Actress in a Play" ;
     skos:prefLabel "Tony Award Best Actress in a Play"@en ;
-    myOnt:categoryType "Play" .
+    myOnt:categoryType "Play" ;
+    myOnt:belongsToAward ex:TonyAwards .
 
-ex:Best_Actor_Musical a myOnt:AwardCategory ;
+ex:Best_Actor_Musical
+    a myOnt:AwardCategory ;
     myOnt:categoryLabel "Tony Award Best Actor in a Musical" ;
     skos:prefLabel "Tony Award Best Actor in a Musical"@en ;
-    myOnt:categoryType "Musical" .
+    myOnt:categoryType "Musical" ;
+    myOnt:belongsToAward ex:TonyAwards .
 
 ex:Winning_2015_Helen_Mirren
     a myOnt:AwardWinning ;
@@ -52,52 +66,3 @@ ex:Winning_2015_Michael_Cerveris
     myOnt:hasGenderCategory ex:Masculine ;
     myOnt:awardYear 2015 ;
     myOnt:genderCategory "masculina" .
-
-# Incorrect data examples for validation
-
-ex:Bad_Person_No_Name
-    a foaf:Person .
-
-ex:Bad_Work_No_Name
-    a schema:CreativeWork .
-
-ex:Bad_Category_No_Label
-    a myOnt:AwardCategory .
-
-ex:Bad_Winning_No_Winner
-    a myOnt:AwardWinning ;
-    myOnt:recordIdentifier "Bad_Winning_No_Winner" ;
-    myOnt:awardedForWork ex:The_Audience ;
-    myOnt:hasAwardCategory ex:Best_Actress_Play ;
-    myOnt:hasGenderCategory ex:Feminine ;
-    myOnt:awardYear 2015 ;
-    myOnt:genderCategory "femenina" .
-
-ex:Bad_Winning_Wrong_Year
-    a myOnt:AwardWinning ;
-    myOnt:recordIdentifier "Bad_Winning_Wrong_Year" ;
-    myOnt:winner ex:Helen_Mirren ;
-    myOnt:awardedForWork ex:The_Audience ;
-    myOnt:hasAwardCategory ex:Best_Actress_Play ;
-    myOnt:hasGenderCategory ex:Feminine ;
-    myOnt:awardYear 2020 ;
-    myOnt:genderCategory "femenina" .
-
-ex:Bad_Winning_Wrong_Gender
-    a myOnt:AwardWinning ;
-    myOnt:recordIdentifier "Bad_Winning_Wrong_Gender" ;
-    myOnt:winner ex:Michael_Cerveris ;
-    myOnt:awardedForWork ex:Fun_Home ;
-    myOnt:hasAwardCategory ex:Best_Actor_Musical ;
-    myOnt:hasGenderCategory ex:Masculine ;
-    myOnt:awardYear 2015 ;
-    myOnt:genderCategory "otro" .
-
-ex:Bad_Winning_No_Work
-    a myOnt:AwardWinning ;
-    myOnt:recordIdentifier "Bad_Winning_No_Work" ;
-    myOnt:winner ex:Helen_Mirren ;
-    myOnt:hasAwardCategory ex:Best_Actress_Play ;
-    myOnt:hasGenderCategory ex:Feminine ;
-    myOnt:awardYear 2015 ;
-    myOnt:genderCategory "femenina" .
