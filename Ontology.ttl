@@ -40,10 +40,10 @@ schema:CreativeWork
 # Classes defined in this ontology
 
 
-myOnt:DatasetRecord
+myOnt:AwardWinning
     a owl:Class ;
-    rdfs:label "Dataset record"@en ;
-    rdfs:comment "A record extracted from the original Tony Awards dataset."@en .
+    rdfs:label "Award winning record"@en ;
+    rdfs:comment "A concrete record representing that a person won a Tony Award in a given year for a specific work and category."@en .
 
 myOnt:TonyAward
     a owl:Class ;
@@ -232,10 +232,10 @@ myOnt:genderCategory
 
 myOnt:recordIdentifier
     a owl:DatatypeProperty , owl:FunctionalProperty ;
-    rdfs:domain myOnt:DatasetRecord ;
+    rdfs:domain myOnt:AwardWinning ;
     rdfs:range xsd:string ;
     rdfs:label "record identifier"@en ;
-    rdfs:comment "Identifier of a dataset record extracted from the original Tony Awards dataset."@en .
+    rdfs:comment "Identifier of an award-winning record extracted from the original Tony Awards dataset."@en .
 
 myOnt:categoryType
     a owl:DatatypeProperty ;
