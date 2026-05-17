@@ -252,12 +252,12 @@ foaf:name
     rdfs:label "name"@en ;
     rdfs:comment "Name of the winning person. It corresponds to the NOMBRE column in the dataset."@en .
 
-schema:name
-    a owl:DatatypeProperty ;
+myOnt:workTitle
+    a owl:DatatypeProperty , owl:FunctionalProperty ;
     rdfs:domain schema:CreativeWork ;
     rdfs:range xsd:string ;
-    rdfs:label "name"@en ;
-    rdfs:comment "Name of the awarded work. It corresponds to the OBRA column in the dataset."@en .
+    rdfs:label "work title"@en ;
+    rdfs:comment "Title of the awarded creative work. It corresponds to the OBRA column in the dataset."@en .
 
 
 # Annotation properties
@@ -324,7 +324,7 @@ schema:CreativeWork
     rdfs:subClassOf
         [
             a owl:Restriction ;
-            owl:onProperty schema:name ;
+            owl:onProperty myOnt:workTitle ;
             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onDataRange xsd:string
         ] .
@@ -389,7 +389,7 @@ myOnt:HelenMirren
 
 myOnt:TheAudience
     a owl:NamedIndividual , schema:CreativeWork ;
-    schema:name "The Audience" .
+    myOnt:workTitle "The Audience" .
 
 myOnt:Winning_2015_Helen_Mirren
     a owl:NamedIndividual , myOnt:AwardWinning ;
