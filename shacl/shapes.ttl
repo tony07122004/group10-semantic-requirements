@@ -4,7 +4,7 @@
 @prefix schema: <http://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix exsh: <http://example.org/shacl/> .
+@prefix exsh: <https://w3id.org/tony-awards/shapes#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 
 exsh:PersonShape
@@ -27,12 +27,12 @@ exsh:CreativeWorkShape
     sh:closed true ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:property [
-        sh:path schema:name ;
+        sh:path myOnt:workTitle ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:datatype xsd:string ;
         sh:minLength 1 ;
-        sh:message "Every work must have exactly one non-empty name." ;
+        sh:message "Every creative work must have exactly one non-empty work title." ;
     ] .
 
 exsh:AwardCategoryShape
@@ -47,6 +47,21 @@ exsh:AwardCategoryShape
         sh:datatype xsd:string ;
         sh:pattern "Play|Musical" ;
         sh:message "Every award category must have one label containing Play or Musical." ;
+    ] ;
+    sh:property [
+        sh:path myOnt:categoryType ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:in ( "Play" "Musical" ) ;
+        sh:message "Every award category must have category type Play or Musical." ;
+    ] ;
+    sh:property [
+        sh:path myOnt:belongsToAward ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class myOnt:TonyAward ;
+        sh:message "Every award category must belong to exactly one Tony Award." ;
     ] .
 
 exsh:AwardWinningShape
@@ -54,11 +69,22 @@ exsh:AwardWinningShape
     sh:targetClass myOnt:AwardWinning ;
     sh:closed true ;
     sh:ignoredProperties ( rdf:type ) ;
+    sh:property exsh:RecordIdentifierPropertyShape ;
     sh:property exsh:WinnerPropertyShape ;
     sh:property exsh:AwardedForWorkPropertyShape ;
     sh:property exsh:HasAwardCategoryPropertyShape ;
+    sh:property exsh:HasGenderCategoryPropertyShape ;
     sh:property exsh:AwardYearPropertyShape ;
-    sh:property exsh:GenderCategoryPropertyShape .
+    sh:property exsh:GenderCategoryLiteralPropertyShape .
+
+exsh:RecordIdentifierPropertyShape
+    a sh:PropertyShape ;
+    sh:path myOnt:recordIdentifier ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:datatype xsd:string ;
+    sh:minLength 1 ;
+    sh:message "Every award winning record must have exactly one record identifier." .
 
 exsh:WinnerPropertyShape
     a sh:PropertyShape ;
@@ -84,6 +110,14 @@ exsh:HasAwardCategoryPropertyShape
     sh:class myOnt:AwardCategory ;
     sh:message "Every award winning record must have exactly one award category." .
 
+exsh:HasGenderCategoryPropertyShape
+    a sh:PropertyShape ;
+    sh:path myOnt:hasGenderCategory ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:class myOnt:GenderCategory ;
+    sh:message "Every award winning record must have exactly one gender category resource." .
+
 exsh:AwardYearPropertyShape
     a sh:PropertyShape ;
     sh:path myOnt:awardYear ;
@@ -94,7 +128,7 @@ exsh:AwardYearPropertyShape
     sh:maxInclusive 2015 ;
     sh:message "Award year must be an integer between 1982 and 2015." .
 
-exsh:GenderCategoryPropertyShape
+exsh:GenderCategoryLiteralPropertyShape
     a sh:PropertyShape ;
     sh:path myOnt:genderCategory ;
     sh:minCount 1 ;
