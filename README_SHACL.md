@@ -54,3 +54,31 @@ To correct the data:
 - Add missing winners and works to award winning records.
 - Replace invalid gender values with `masculina` or `femenina`.
 - Use only years between 1982 and 2015.
+
+
+## OOPS! ontology evaluation
+
+The ontology was evaluated using OOPS! before and after applying corrections.
+
+Initial OOPS! results detected several pitfalls:
+- P04: Creating unconnected ontology elements.
+- P10: Missing disjointness.
+- P12: Equivalent properties not explicitly declared.
+- P13: Inverse relationships not explicitly declared.
+
+The ontology was improved by:
+- Adding disjointness axioms.
+- Adding inverse object properties.
+- Removing the disconnected DatasetRecord class.
+- Keeping myOnt:AwardWinning as the central n-ary class that connects winners, works, award categories, years and gender categories.
+
+Final OOPS! result only reports:
+- P12: Equivalent properties not explicitly declared.
+
+This warning refers to foaf:name and schema:name. They were not declared as owl:equivalentProperty because they are reused from different vocabularies and applied to different classes in this ontology: foaf:name is used for persons, while schema:name is used for creative works.
+
+### OOPS! evaluation screenshots
+
+- Initial evaluation: `oops_evaluation_before.png`
+- Intermediate evaluation: `oops_evaluation_after.png`
+- Final evaluation: `oops_evaluation_final.png`
