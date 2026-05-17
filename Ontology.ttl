@@ -231,11 +231,11 @@ myOnt:genderCategory
     rdfs:comment "Literal value used in the dataset for masculine or feminine category."@en .
 
 myOnt:recordIdentifier
-    a owl:DatatypeProperty ;
-    rdfs:domain myOnt:AwardWinning ;
+    a owl:DatatypeProperty , owl:FunctionalProperty ;
+    rdfs:domain myOnt:DatasetRecord ;
     rdfs:range xsd:string ;
     rdfs:label "record identifier"@en ;
-    rdfs:comment "Identifier for a dataset record."@en .
+    rdfs:comment "Identifier of a dataset record extracted from the original Tony Awards dataset."@en .
 
 myOnt:categoryType
     a owl:DatatypeProperty ;
