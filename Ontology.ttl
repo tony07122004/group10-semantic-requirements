@@ -116,6 +116,24 @@ myOnt:FeminineCategory
     rdfs:comment "Feminine award category."@en .
 
 
+
+# Disjointness axioms
+
+[] a owl:AllDisjointClasses ;
+    owl:members (
+        foaf:Person
+        schema:CreativeWork
+        myOnt:AwardWinning
+        myOnt:AwardCategory
+        myOnt:GenderCategory
+    ) .
+
+myOnt:MasculineCategory owl:disjointWith myOnt:FeminineCategory .
+
+myOnt:PlayAward owl:disjointWith myOnt:MusicalAward .
+
+myOnt:BestActorAward owl:disjointWith myOnt:BestActressAward .
+
 # Object properties
 
 myOnt:winner
@@ -153,6 +171,47 @@ myOnt:belongsToAward
     rdfs:label "belongs to award"@en ;
     rdfs:comment "Links an award category to the general Tony Award."@en .
 
+# Inverse object properties
+
+myOnt:isWinnerOf
+    a owl:ObjectProperty ;
+    owl:inverseOf myOnt:winner ;
+    rdfs:domain foaf:Person ;
+    rdfs:range myOnt:AwardWinning ;
+    rdfs:label "is winner of"@en ;
+    rdfs:comment "Links a person to the award-winning records in which the person is the winner."@en .
+
+myOnt:isWorkAwardedIn
+    a owl:ObjectProperty ;
+    owl:inverseOf myOnt:awardedForWork ;
+    rdfs:domain schema:CreativeWork ;
+    rdfs:range myOnt:AwardWinning ;
+    rdfs:label "is work awarded in"@en ;
+    rdfs:comment "Links a creative work to the award-winning records in which the work was awarded."@en .
+
+myOnt:isAwardCategoryOf
+    a owl:ObjectProperty ;
+    owl:inverseOf myOnt:hasAwardCategory ;
+    rdfs:domain myOnt:AwardCategory ;
+    rdfs:range myOnt:AwardWinning ;
+    rdfs:label "is award category of"@en ;
+    rdfs:comment "Links an award category to the award-winning records that use that category."@en .
+
+myOnt:isGenderCategoryOf
+    a owl:ObjectProperty ;
+    owl:inverseOf myOnt:hasGenderCategory ;
+    rdfs:domain myOnt:GenderCategory ;
+    rdfs:range myOnt:AwardWinning ;
+    rdfs:label "is gender category of"@en ;
+    rdfs:comment "Links a gender category to the award-winning records that use that gender category."@en .
+
+myOnt:hasCategory
+    a owl:ObjectProperty ;
+    owl:inverseOf myOnt:belongsToAward ;
+    rdfs:domain myOnt:TonyAward ;
+    rdfs:range myOnt:AwardCategory ;
+    rdfs:label "has category"@en ;
+    rdfs:comment "Links the general Tony Award entity to its award categories."@en .
 
 # Datatype properties
 
