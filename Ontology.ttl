@@ -14,10 +14,18 @@
     a owl:Ontology ;
     dcterms:title "Tony Awards Winners Ontology"@en ;
     dcterms:creator "Group 10"@en ;
+    dcterms:contributor "Tonybingfeng Lin"@en ;
     dcterms:description "Ontology for representing Tony Award winners from 1982 to 2015, including winners, works, award categories, years and gender categories."@en ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:created "2026-05-17"^^xsd:date ;
+    dcterms:issued "2026-05-17"^^xsd:date ;
+    dcterms:modified "2026-05-17"^^xsd:date ;
+    dcterms:publisher "Group 10"@en ;
+    dcterms:source <https://github.com/tony07122004/group10-semantic-requirements> ;
+    dcterms:bibliographicCitation "Group 10. Tony Awards Winners Ontology. Version 1.0.0."@en ;
     vann:preferredNamespacePrefix "myOnt" ;
     vann:preferredNamespaceUri "https://w3id.org/tony-awards/ontology#" ;
+    owl:versionIRI <https://w3id.org/tony-awards/ontology/1.0.0> ;
     owl:versionInfo "1.0.0" ;
     rdfs:label "Tony Awards Winners Ontology"@en ;
     rdfs:comment "This ontology models Tony Award winning records using an n-ary relation represented by myOnt:AwardWinning."@en .
