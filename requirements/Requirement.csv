@@ -1,21 +1,21 @@
 Identifier,Requirement,Provenance,Comments
-FR01,List all Tony Award winners for a given year.,"YEAR, NAME, AWARD_CATEGORY",Basic query by year.
-FR02,Retrieve the winner of a specific award category in a given year.,"AWARD_CATEGORY, YEAR, NAME",Category-year lookup.
-FR03,List all award categories present in the dataset.,AWARD_CATEGORY,Identify available award types.
-FR04,Retrieve all works for which a specific person won a Tony Award.,"NAME, WORK",Person-work relationship.
-FR05,Count how many Tony Awards a person has won.,"NAME, YEAR",Aggregation per person.
-FR06,Identify people who have won the award multiple times.,"NAME, YEAR",Detect repeated winners.
-FR07,List all works that have received a Tony Award.,"WORK, AWARD_CATEGORY",Production-based analysis.
-FR08,Retrieve the winner associated with a specific work.,"WORK, NAME",Reverse lookup from work to person.
-FR09,Retrieve the winners for a specific award category across different years.,"AWARD_CATEGORY, YEAR, NAME",Historical analysis of categories.
-FR10,Determine the earliest and latest years represented in the dataset.,YEAR,Dataset temporal coverage.
-FR11,List all winners belonging to the feminine category.,"GENDER_CATEGORY, NAME",Gender filtering.
-FR12,List all winners belonging to the masculine category.,"GENDER_CATEGORY, NAME",Gender filtering.
-FR13,Count the number of awards won by each gender category.,"GENDER_CATEGORY, NAME",Gender distribution analysis.
-FR14,Retrieve all winners of a given work across different award categories.,"WORK, AWARD_CATEGORY, NAME",Work-centered exploration.
-FR15,Identify works that have won awards in multiple years.,"WORK, YEAR",Detect recurring productions.
-FR16,Retrieve all winners within a specific award type, Play or Musical.,"AWARD_CATEGORY, NAME",Distinguish theatre vs musical awards.
-FR17,List winners by gender category for a specific year.,"YEAR, GENDER_CATEGORY, NAME",Gender comparison per year.
-FR18,Generate statistics of awards per year.,"YEAR, AWARD_CATEGORY",Annual aggregation.
-FR19,Detect duplicate records with the same year, award category and winner.,"YEAR, AWARD_CATEGORY, NAME",Data quality validation.
-FR20,Retrieve the complete historical record of a given award category ordered by year.,"AWARD_CATEGORY, YEAR, NAME, WORK",Full historical timeline of the category.
+FR01,"List all Tony Award winners for a given year.","YEAR, NAME, AWARD_CATEGORY",Basic query by year.
+FR02,"Retrieve the winner of a specific award category in a given year.","AWARD_CATEGORY, YEAR, NAME",Category-year lookup.
+FR03,"List all award categories present in the dataset.","AWARD_CATEGORY",Identify available award types.
+FR04,"Retrieve all works for which a specific person won a Tony Award.","NAME, WORK",Person-work relationship.
+FR05,"Count how many Tony Awards a person has won.","NAME, YEAR",Aggregate per person.
+FR06,"Identify people who have won the award multiple times.","NAME, YEAR",Detect repeated winners.
+FR07,"List all works that have received a Tony Award.","WORK, AWARD_CATEGORY",Production-based analysis.
+FR08,"Retrieve the winner associated with a specific work.","WORK, NAME",Reverse lookup from work to person.
+FR09,"Retrieve the winners for a specific award category across different years.","AWARD_CATEGORY, YEAR, NAME",Historical analysis of categories.
+FR10,"Determine the earliest and latest years represented in the dataset.","YEAR",Dataset temporal coverage.
+FR11,"List all winners belonging to the feminine category.","GENDER_CATEGORY, NAME",Gender filtering.
+FR12,"List all winners belonging to the masculine category.","GENDER_CATEGORY, NAME",Gender filtering.
+FR13,"Count the number of awards won by each gender category.","GENDER_CATEGORY, NAME",Gender distribution analysis.
+FR14,"Retrieve all winners of a given work across different award categories.","WORK, AWARD_CATEGORY, NAME",Work-centered exploration.
+FR15,"Identify works that have won awards in multiple years.","WORK, YEAR",Detect recurring productions.
+FR16,"Retrieve all winners within a specific award type, Play or Musical.","AWARD_CATEGORY, NAME",Distinguish theatre vs musical awards.
+FR17,"List winners by gender category for a specific year.","YEAR, GENDER_CATEGORY, NAME",Gender comparison per year.
+FR18,"Generate statistics of awards per year.","YEAR, AWARD_CATEGORY",Annual aggregation.
+FR19,"Detect duplicate records with the same year, award category and winner.","YEAR, AWARD_CATEGORY, NAME",Data quality validation.
+FR20,"Retrieve the complete historical record of a given award category ordered by year.","AWARD_CATEGORY, YEAR, NAME, WORK",Full historical timeline of the category.
