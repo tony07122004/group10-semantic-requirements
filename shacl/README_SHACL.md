@@ -100,9 +100,9 @@ No pitfalls detected
 
 ### OOPS! evaluation screenshots
 
-- Initial evaluation: `oops_evaluation_before.png`
-- Intermediate evaluation: `oops_evaluation_after.png`
-- Final evaluation: `oops_evaluation_final_no_pitfalls.png`
+- Initial evaluation: `../evaluation/oops/oops_evaluation_before.png`
+- Intermediate evaluation: `../evaluation/oops/oops_evaluation_after.png`
+- Final evaluation: `../evaluation/oops/oops_evaluation_final_no_pitfalls.png`
 
 ## FOOPS! evaluation
 
@@ -116,7 +116,7 @@ The final FOOPS! score was:
 
 ### FOOPS! evaluation screenshot
 
-- Final FOOPS! evaluation: `foops_evaluation_final_97.png`
+- Final FOOPS! evaluation: `/evaluation/foops/foops_evaluation_final_97.png`
 
 ## Final validation summary
 
