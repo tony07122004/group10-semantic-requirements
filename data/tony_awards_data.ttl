@@ -37,16 +37,19 @@ ex:Best_Actress_Play
     a myOnt:AwardCategory ;
     myOnt:categoryLabel "Tony Award Best Actress in a Play" ;
     skos:prefLabel "Tony Award Best Actress in a Play"@en ;
+    myOnt:categoryType "Play" ;
     myOnt:belongsToAward ex:TonyAwards .
 
 ex:Best_Actor_Musical
     a myOnt:AwardCategory ;
     myOnt:categoryLabel "Tony Award Best Actor in a Musical" ;
     skos:prefLabel "Tony Award Best Actor in a Musical"@en ;
+    myOnt:categoryType "Musical" ;
     myOnt:belongsToAward ex:TonyAwards .
 
 ex:Winning_2015_Helen_Mirren
     a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2015_Helen_Mirren" ;
     myOnt:winner ex:Helen_Mirren ;
     myOnt:awardedForWork ex:The_Audience ;
     myOnt:hasAwardCategory ex:Best_Actress_Play ;
@@ -56,6 +59,7 @@ ex:Winning_2015_Helen_Mirren
 
 ex:Winning_2015_Michael_Cerveris
     a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2015_Michael_Cerveris" ;
     myOnt:winner ex:Michael_Cerveris ;
     myOnt:awardedForWork ex:Fun_Home ;
     myOnt:hasAwardCategory ex:Best_Actor_Musical ;
