@@ -1,0 +1,2327 @@
+@prefix ex: <https://w3id.org/tony-awards/resource#> .
+@prefix myOnt: <https://w3id.org/tony-awards/ontology#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix schema: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Knowledge Graph generated from data/dataset_combinado_.csv
+# Complete valid records represented: 134
+# Rows with missing required values were not included because the SHACL shapes require winner, work, category, year and gender values.
+
+ex:TonyAwards
+    a myOnt:TonyAward ;
+    skos:prefLabel "Tony Awards"@en .
+
+# Gender categories
+ex:Feminine
+    a myOnt:GenderCategory , myOnt:FeminineCategory ;
+    skos:prefLabel "femenina"@es .
+
+ex:Masculine
+    a myOnt:GenderCategory , myOnt:MasculineCategory ;
+    skos:prefLabel "masculina"@es .
+
+# Award categories
+ex:Best_Actor_in_a_Musical
+    a myOnt:AwardCategory , myOnt:MusicalAward , myOnt:BestActorAward ;
+    myOnt:categoryLabel "Tony Award Best Actor in a Musical" ;
+    skos:prefLabel "Tony Award Best Actor in a Musical"@en ;
+    myOnt:categoryType "Musical" ;
+    myOnt:belongsToAward ex:TonyAwards .
+
+ex:Best_Actor_in_a_Play
+    a myOnt:AwardCategory , myOnt:PlayAward , myOnt:BestActorAward ;
+    myOnt:categoryLabel "Tony Award Best Actor in a Play" ;
+    skos:prefLabel "Tony Award Best Actor in a Play"@en ;
+    myOnt:categoryType "Play" ;
+    myOnt:belongsToAward ex:TonyAwards .
+
+ex:Best_Actress_in_a_Musical
+    a myOnt:AwardCategory , myOnt:MusicalAward , myOnt:BestActressAward ;
+    myOnt:categoryLabel "Tony Award Best Actress in a Musical" ;
+    skos:prefLabel "Tony Award Best Actress in a Musical"@en ;
+    myOnt:categoryType "Musical" ;
+    myOnt:belongsToAward ex:TonyAwards .
+
+ex:Best_Actress_in_a_Play
+    a myOnt:AwardCategory , myOnt:PlayAward , myOnt:BestActressAward ;
+    myOnt:categoryLabel "Tony Award Best Actress in a Play" ;
+    skos:prefLabel "Tony Award Best Actress in a Play"@en ;
+    myOnt:categoryType "Play" ;
+    myOnt:belongsToAward ex:TonyAwards .
+
+# People
+ex:Alan_Bates
+    a foaf:Person ;
+    foaf:name "Alan Bates" .
+
+ex:Alan_Cumming
+    a foaf:Person ;
+    foaf:name "Alan Cumming" .
+
+ex:Alex_Sharp
+    a foaf:Person ;
+    foaf:name "Alex Sharp" .
+
+ex:Alice_Ripley
+    a foaf:Person ;
+    foaf:name "Alice Ripley" .
+
+ex:Anthony_LaPaglia
+    a foaf:Person ;
+    foaf:name "Anthony LaPaglia" .
+
+ex:Audra_McDonald
+    a foaf:Person ;
+    foaf:name "Audra McDonald" .
+
+ex:Bebe_Neuwirth
+    a foaf:Person ;
+    foaf:name "Bebe Neuwirth" .
+
+ex:Ben_Harney
+    a foaf:Person ;
+    foaf:name "Ben Harney" .
+
+ex:Bernadette_Peters
+    a foaf:Person ;
+    foaf:name "Bernadette Peters" .
+
+ex:Bill_Irwin
+    a foaf:Person ;
+    foaf:name "Bill Irwin" .
+
+ex:Billy_Porter
+    a foaf:Person ;
+    foaf:name "Billy Porter" .
+
+ex:Boyd_Gaines
+    a foaf:Person ;
+    foaf:name "Boyd Gaines" .
+
+ex:Brent_Carver
+    a foaf:Person ;
+    foaf:name "Brent Carver" .
+
+ex:Brian_Dennehy
+    a foaf:Person ;
+    foaf:name "Brian Dennehy" .
+
+ex:Brian_Stokes_Mitchell
+    a foaf:Person ;
+    foaf:name "Brian Stokes Mitchell" .
+
+ex:Bryan_Cranston
+    a foaf:Person ;
+    foaf:name "Bryan Cranston" .
+
+ex:Catherine_Zeta_Jones
+    a foaf:Person ;
+    foaf:name "Catherine Zeta-Jones" .
+
+ex:Cherry_Jones
+    a foaf:Person ;
+    foaf:name "Cherry Jones" .
+
+ex:Chita_Rivera
+    a foaf:Person ;
+    foaf:name "Chita Rivera" .
+
+ex:Christine_Ebersole
+    a foaf:Person ;
+    foaf:name "Christine Ebersole" .
+
+ex:Christopher_Plummer
+    a foaf:Person ;
+    foaf:name "Christopher Plummer" .
+
+ex:Cicely_Tyson
+    a foaf:Person ;
+    foaf:name "Cicely Tyson" .
+
+ex:Cynthia_Nixon
+    a foaf:Person ;
+    foaf:name "Cynthia Nixon" .
+
+ex:David_Alvarez
+    a foaf:Person ;
+    foaf:name "David Alvarez" .
+
+ex:David_Hyde_Pierce
+    a foaf:Person ;
+    foaf:name "David Hyde Pierce" .
+
+ex:Deanna_Dunagan
+    a foaf:Person ;
+    foaf:name "Deanna Dunagan" .
+
+ex:Denzel_Washington
+    a foaf:Person ;
+    foaf:name "Denzel Washington" .
+
+ex:Derek_Jacobi
+    a foaf:Person ;
+    foaf:name "Derek Jacobi" .
+
+ex:Diana_Rigg
+    a foaf:Person ;
+    foaf:name "Diana Rigg" .
+
+ex:Donna_Murphy
+    a foaf:Person ;
+    foaf:name "Donna Murphy" .
+
+ex:Douglas_Hodge
+    a foaf:Person ;
+    foaf:name "Douglas Hodge" .
+
+ex:Faith_Prince
+    a foaf:Person ;
+    foaf:name "Faith Prince" .
+
+ex:Frances_McDormand
+    a foaf:Person ;
+    foaf:name "Frances McDormand" .
+
+ex:Frank_Langella
+    a foaf:Person ;
+    foaf:name "Frank Langella" .
+
+ex:Geoffrey_Rush
+    a foaf:Person ;
+    foaf:name "Geoffrey Rush" .
+
+ex:George_Grizzard
+    a foaf:Person ;
+    foaf:name "George Grizzard" .
+
+ex:George_Hearn
+    a foaf:Person ;
+    foaf:name "George Hearn" .
+
+ex:George_Rose
+    a foaf:Person ;
+    foaf:name "George Rose" .
+
+ex:Glenn_Close
+    a foaf:Person ;
+    foaf:name "Glenn Close" .
+
+ex:Gregory_Hines
+    a foaf:Person ;
+    foaf:name "Gregory Hines" .
+
+ex:Harvey_Fierstein
+    a foaf:Person ;
+    foaf:name "Harvey Fierstein" .
+
+ex:Heather_Headley
+    a foaf:Person ;
+    foaf:name "Heather Headley" .
+
+ex:Helen_Mirren
+    a foaf:Person ;
+    foaf:name "Helen Mirren" .
+
+ex:Hugh_Jackman
+    a foaf:Person ;
+    foaf:name "Hugh Jackman" .
+
+ex:Idina_Menzel
+    a foaf:Person ;
+    foaf:name "Idina Menzel" .
+
+ex:James_Corden
+    a foaf:Person ;
+    foaf:name "James Corden" .
+
+ex:James_Earl_Jones
+    a foaf:Person ;
+    foaf:name "James Earl Jones" .
+
+ex:James_Naughton
+    a foaf:Person ;
+    foaf:name "James Naughton" .
+
+ex:Janet_McTeer
+    a foaf:Person ;
+    foaf:name "Janet McTeer" .
+
+ex:Jason_Alexander
+    a foaf:Person ;
+    foaf:name "Jason Alexander" .
+
+ex:Jefferson_Mays
+    a foaf:Person ;
+    foaf:name "Jefferson Mays" .
+
+ex:Jennifer_Ehle
+    a foaf:Person ;
+    foaf:name "Jennifer Ehle" .
+
+ex:Jennifer_Holliday
+    a foaf:Person ;
+    foaf:name "Jennifer Holliday" .
+
+ex:Jeremy_Irons
+    a foaf:Person ;
+    foaf:name "Jeremy Irons" .
+
+ex:Jessica_Tandy
+    a foaf:Person ;
+    foaf:name "Jessica Tandy" .
+
+ex:Jessie_Mueller
+    a foaf:Person ;
+    foaf:name "Jessie Mueller" .
+
+ex:Joan_Allen
+    a foaf:Person ;
+    foaf:name "Joan Allen" .
+
+ex:Joanna_Gleason
+    a foaf:Person ;
+    foaf:name "Joanna Gleason" .
+
+ex:John_Lithgow
+    a foaf:Person ;
+    foaf:name "John Lithgow" .
+
+ex:John_Lloyd_Young
+    a foaf:Person ;
+    foaf:name "John Lloyd Young" .
+
+ex:Jonathan_Pryce
+    a foaf:Person ;
+    foaf:name "Jonathan Pryce" .
+
+ex:Judd_Hirsch
+    a foaf:Person ;
+    foaf:name "Judd Hirsch" .
+
+ex:Judi_Dench
+    a foaf:Person ;
+    foaf:name "Judi Dench" .
+
+ex:Julie_White
+    a foaf:Person ;
+    foaf:name "Julie White" .
+
+ex:Kelli_O_Hara
+    a foaf:Person ;
+    foaf:name "Kelli O'Hara" .
+
+ex:LaChanze
+    a foaf:Person ;
+    foaf:name "LaChanze" .
+
+ex:Lea_Salonga
+    a foaf:Person ;
+    foaf:name "Lea Salonga" .
+
+ex:Lily_Tomlin
+    a foaf:Person ;
+    foaf:name "Lily Tomlin" .
+
+ex:Linda_Lavin
+    a foaf:Person ;
+    foaf:name "Linda Lavin" .
+
+ex:Lindsay_Duncan
+    a foaf:Person ;
+    foaf:name "Lindsay Duncan" .
+
+ex:Madeline_Kahn
+    a foaf:Person ;
+    foaf:name "Madeline Kahn" .
+
+ex:Maggie_Smith
+    a foaf:Person ;
+    foaf:name "Maggie Smith" .
+
+ex:Marcia_Gay_Harden
+    a foaf:Person ;
+    foaf:name "Marcia Gay Harden" .
+
+ex:Marissa_Jaret_Winokur
+    a foaf:Person ;
+    foaf:name "Marissa Jaret Winokur" .
+
+ex:Mark_Rylance
+    a foaf:Person ;
+    foaf:name "Mark Rylance" .
+
+ex:Martin_Short
+    a foaf:Person ;
+    foaf:name "Martin Short" .
+
+ex:Maryann_Plunkett
+    a foaf:Person ;
+    foaf:name "Maryann Plunkett" .
+
+ex:Maria_Luisa_Parker
+    a foaf:Person ;
+    foaf:name "María Luisa Parker" .
+
+ex:Maria_Mullen
+    a foaf:Person ;
+    foaf:name "María Mullen" .
+
+ex:Matthew_Broderick
+    a foaf:Person ;
+    foaf:name "Matthew Broderick" .
+
+ex:Mercedes_Ruhl
+    a foaf:Person ;
+    foaf:name "Mercedes Rühl" .
+
+ex:Michael_Cerveris
+    a foaf:Person ;
+    foaf:name "Michael Cerveris" .
+
+ex:Michael_Crawford
+    a foaf:Person ;
+    foaf:name "Michael Crawford" .
+
+ex:Natalia_Makarova
+    a foaf:Person ;
+    foaf:name "Natalia Makarova" .
+
+ex:Natasha_Richardson
+    a foaf:Person ;
+    foaf:name "Natasha Richardson" .
+
+ex:Nathan_Lane
+    a foaf:Person ;
+    foaf:name "Nathan Lane" .
+
+ex:Neil_Patrick_Harris
+    a foaf:Person ;
+    foaf:name "Neil Patrick Harris" .
+
+ex:Nigel_Hawthorne
+    a foaf:Person ;
+    foaf:name "Nigel Hawthorne" .
+
+ex:Nina_Arianda
+    a foaf:Person ;
+    foaf:name "Nina Arianda" .
+
+ex:Norbert_Leo_Butz
+    a foaf:Person ;
+    foaf:name "Norbert Leo Butz" .
+
+ex:Patina_Miller
+    a foaf:Person ;
+    foaf:name "Patina Miller" .
+
+ex:Patti_LuPone
+    a foaf:Person ;
+    foaf:name "Patti LuPone" .
+
+ex:Pauline_Collins
+    a foaf:Person ;
+    foaf:name "Pauline Collins" .
+
+ex:Paulo_Szot
+    a foaf:Person ;
+    foaf:name "Paulo Szot" .
+
+ex:Philip_Bosco
+    a foaf:Person ;
+    foaf:name "Philip Bosco" .
+
+ex:Phylicia_Rashad
+    a foaf:Person ;
+    foaf:name "Phylicia Rashad" .
+
+ex:Ralph_Fiennes
+    a foaf:Person ;
+    foaf:name "Ralph Fiennes" .
+
+ex:Richard_Easton
+    a foaf:Person ;
+    foaf:name "Richard Easton" .
+
+ex:Richard_Griffiths
+    a foaf:Person ;
+    foaf:name "Richard Griffiths" .
+
+ex:Robert_Lindsay
+    a foaf:Person ;
+    foaf:name "Robert Lindsay" .
+
+ex:Robert_Morse
+    a foaf:Person ;
+    foaf:name "Robert Morse" .
+
+ex:Roger_Rees
+    a foaf:Person ;
+    foaf:name "Roger Rees" .
+
+ex:Ron_Leibman
+    a foaf:Person ;
+    foaf:name "Ron Leibman" .
+
+ex:Ron_Silver
+    a foaf:Person ;
+    foaf:name "Ron Silver" .
+
+ex:Ruth_Brown
+    a foaf:Person ;
+    foaf:name "Ruth Brown" .
+
+ex:Stephen_Dillane
+    a foaf:Person ;
+    foaf:name "Stephen Dillane" .
+
+ex:Stephen_Spinella
+    a foaf:Person ;
+    foaf:name "Stephen Spinella" .
+
+ex:Steve_Kazee
+    a foaf:Person ;
+    foaf:name "Steve Kazee" .
+
+ex:Stockard_Channing
+    a foaf:Person ;
+    foaf:name "Stockard Channing" .
+
+ex:Sutton_Foster
+    a foaf:Person ;
+    foaf:name "Sutton Foster" .
+
+ex:Tommy_Tune
+    a foaf:Person ;
+    foaf:name "Tommy Tune" .
+
+ex:Tracy_Letts
+    a foaf:Person ;
+    foaf:name "Tracy Letts" .
+
+ex:Tyne_Daly
+    a foaf:Person ;
+    foaf:name "Tyne Daly" .
+
+ex:Vanessa_Redgrave
+    a foaf:Person ;
+    foaf:name "Vanessa Redgrave" .
+
+ex:Victoria_Clark
+    a foaf:Person ;
+    foaf:name "Victoria Clark" .
+
+ex:Viola_Davis
+    a foaf:Person ;
+    foaf:name "Viola Davis" .
+
+ex:Zoe_Caldwell
+    a foaf:Person ;
+    foaf:name "Zoe Caldwell" .
+
+# Creative works
+ex:R_42nd_Street
+    a schema:CreativeWork ;
+    myOnt:workTitle "42nd Street" .
+
+ex:A_Delicate_Balance
+    a schema:CreativeWork ;
+    myOnt:workTitle "A Delicate Balance" .
+
+ex:A_Doll_s_House
+    a schema:CreativeWork ;
+    myOnt:workTitle "A Doll's House" .
+
+ex:A_Funny_Thing_Happened_on_the_Way_to_the_Forum
+    a schema:CreativeWork ;
+    myOnt:workTitle "A Funny Thing Happened on the Way to the Forum" .
+
+ex:A_Little_Night_Music
+    a schema:CreativeWork ;
+    myOnt:workTitle "A Little Night Music" .
+
+ex:A_Raisin_in_the_Sun
+    a schema:CreativeWork ;
+    myOnt:workTitle "A Raisin in the Sun" .
+
+ex:A_View_From_the_Bridge
+    a schema:CreativeWork ;
+    myOnt:workTitle "A View From the Bridge" .
+
+ex:Aida
+    a schema:CreativeWork ;
+    myOnt:workTitle "Aida" .
+
+ex:All_The_Way
+    a schema:CreativeWork ;
+    myOnt:workTitle "All The Way" .
+
+ex:Amy_s_View
+    a schema:CreativeWork ;
+    myOnt:workTitle "Amy's View" .
+
+ex:Angels_in_America_Millennium_Approaches
+    a schema:CreativeWork ;
+    myOnt:workTitle "Angels in America: Millennium Approaches" .
+
+ex:Angels_in_America_Perestroika
+    a schema:CreativeWork ;
+    myOnt:workTitle "Angels in America: Perestroika" .
+
+ex:Annie_Get_Your_Gun
+    a schema:CreativeWork ;
+    myOnt:workTitle "Annie Get Your Gun" .
+
+ex:Anything_Goes
+    a schema:CreativeWork ;
+    myOnt:workTitle "Anything Goes" .
+
+ex:August_Osage_County
+    a schema:CreativeWork ;
+    myOnt:workTitle "August: Osage County" .
+
+ex:Barrymore
+    a schema:CreativeWork ;
+    myOnt:workTitle "Barrymore" .
+
+ex:Beautiful_The_Carole_King_Musical
+    a schema:CreativeWork ;
+    myOnt:workTitle "Beautiful The Carole King Musical" .
+
+ex:Billy_Elliot_The_Musical
+    a schema:CreativeWork ;
+    myOnt:workTitle "Billy Elliot: The Musical" .
+
+ex:Black_and_Blue
+    a schema:CreativeWork ;
+    myOnt:workTitle "Black and Blue" .
+
+ex:Boeing_Boeing
+    a schema:CreativeWork ;
+    myOnt:workTitle "Boeing-Boeing" .
+
+ex:Broadway_Bound
+    a schema:CreativeWork ;
+    myOnt:workTitle "Broadway Bound" .
+
+ex:Burn_This
+    a schema:CreativeWork ;
+    myOnt:workTitle "Burn This" .
+
+ex:Cabaret
+    a schema:CreativeWork ;
+    myOnt:workTitle "Cabaret" .
+
+ex:Catch_Me_If_You_Can
+    a schema:CreativeWork ;
+    myOnt:workTitle "Catch Me If You Can" .
+
+ex:Chicago
+    a schema:CreativeWork ;
+    myOnt:workTitle "Chicago" .
+
+ex:City_of_Angels
+    a schema:CreativeWork ;
+    myOnt:workTitle "City of Angels" .
+
+ex:Conversations_With_My_Father
+    a schema:CreativeWork ;
+    myOnt:workTitle "Conversations With My Father" .
+
+ex:Curtains
+    a schema:CreativeWork ;
+    myOnt:workTitle "Curtains" .
+
+ex:Death_and_the_Maiden
+    a schema:CreativeWork ;
+    myOnt:workTitle "Death and the Maiden" .
+
+ex:Death_of_a_Salesman
+    a schema:CreativeWork ;
+    myOnt:workTitle "Death of a Salesman" .
+
+ex:Dirty_Rotten_Scoundrels
+    a schema:CreativeWork ;
+    myOnt:workTitle "Dirty Rotten Scoundrels" .
+
+ex:Doubt
+    a schema:CreativeWork ;
+    myOnt:workTitle "Doubt" .
+
+ex:Dreamgirls
+    a schema:CreativeWork ;
+    myOnt:workTitle "Dreamgirls" .
+
+ex:Exit_the_King
+    a schema:CreativeWork ;
+    myOnt:workTitle "Exit the King" .
+
+ex:Fences
+    a schema:CreativeWork ;
+    myOnt:workTitle "Fences" .
+
+ex:Fortune_s_Fool
+    a schema:CreativeWork ;
+    myOnt:workTitle "Fortune's Fool" .
+
+ex:Foxfire
+    a schema:CreativeWork ;
+    myOnt:workTitle "Foxfire" .
+
+ex:Frost_Nixon
+    a schema:CreativeWork ;
+    myOnt:workTitle "Frost/Nixon" .
+
+ex:Fun_Home
+    a schema:CreativeWork ;
+    myOnt:workTitle "Fun Home" .
+
+ex:God_of_Carnage
+    a schema:CreativeWork ;
+    myOnt:workTitle "God of Carnage" .
+
+ex:Good_People
+    a schema:CreativeWork ;
+    myOnt:workTitle "Good People" .
+
+ex:Grey_Gardens
+    a schema:CreativeWork ;
+    myOnt:workTitle "Grey Gardens" .
+
+ex:Guys_and_Dolls
+    a schema:CreativeWork ;
+    myOnt:workTitle "Guys and Dolls" .
+
+ex:Gypsy
+    a schema:CreativeWork ;
+    myOnt:workTitle "Gypsy" .
+
+ex:Hairspray
+    a schema:CreativeWork ;
+    myOnt:workTitle "Hairspray" .
+
+ex:Hamlet
+    a schema:CreativeWork ;
+    myOnt:workTitle "Hamlet" .
+
+ex:Hedwig_and_the_Angry_Inch
+    a schema:CreativeWork ;
+    myOnt:workTitle "Hedwig and the Angry Inch" .
+
+ex:How_to_Succeed_in_Business_Without_Really_Trying
+    a schema:CreativeWork ;
+    myOnt:workTitle "How to Succeed in Business Without Really Trying" .
+
+ex:I_Am_My_Own_Wife
+    a schema:CreativeWork ;
+    myOnt:workTitle "I Am My Own Wife" .
+
+ex:I_m_Not_Rappaport
+    a schema:CreativeWork ;
+    myOnt:workTitle "I'm Not Rappaport" .
+
+ex:Into_the_Woods
+    a schema:CreativeWork ;
+    myOnt:workTitle "Into the Woods" .
+
+ex:Jelly_s_Last_Jam
+    a schema:CreativeWork ;
+    myOnt:workTitle "Jelly's Last Jam" .
+
+ex:Jerome_Robbins_Broadway
+    a schema:CreativeWork ;
+    myOnt:workTitle "Jerome Robbins' Broadway" .
+
+ex:Jersey_Boys
+    a schema:CreativeWork ;
+    myOnt:workTitle "Jersey Boys" .
+
+ex:Jerusalem
+    a schema:CreativeWork ;
+    myOnt:workTitle "Jerusalem" .
+
+ex:Joe_Egg
+    a schema:CreativeWork ;
+    myOnt:workTitle "Joe Egg" .
+
+ex:Kinky_Boots
+    a schema:CreativeWork ;
+    myOnt:workTitle "Kinky Boots" .
+
+ex:Kiss_Me_Kate
+    a schema:CreativeWork ;
+    myOnt:workTitle "Kiss Me, Kate" .
+
+ex:Kiss_of_the_Spider_Woman
+    a schema:CreativeWork ;
+    myOnt:workTitle "Kiss of the Spider Woman" .
+
+ex:La_Cage_aux_Folles
+    a schema:CreativeWork ;
+    myOnt:workTitle "La Cage aux Folles" .
+
+ex:Lady_Day_at_Emerson_s_Bar_and_Grill
+    a schema:CreativeWork ;
+    myOnt:workTitle "Lady Day at Emerson's Bar & Grill" .
+
+ex:Lend_Me_a_Tenor
+    a schema:CreativeWork ;
+    myOnt:workTitle "Lend Me a Tenor" .
+
+ex:Lettice_and_Lovage
+    a schema:CreativeWork ;
+    myOnt:workTitle "Lettice and Lovage" .
+
+ex:Little_Me
+    a schema:CreativeWork ;
+    myOnt:workTitle "Little Me" .
+
+ex:Long_Day_s_Journey_Into_Night
+    a schema:CreativeWork ;
+    myOnt:workTitle "Long Day's Journey Into Night" .
+
+ex:Lost_in_Yonkers
+    a schema:CreativeWork ;
+    myOnt:workTitle "Lost in Yonkers" .
+
+ex:Master_Class
+    a schema:CreativeWork ;
+    myOnt:workTitle "Master Class" .
+
+ex:Me_and_My_Girl
+    a schema:CreativeWork ;
+    myOnt:workTitle "Me and My Girl" .
+
+ex:Medea
+    a schema:CreativeWork ;
+    myOnt:workTitle "Medea" .
+
+ex:Miss_Saigon
+    a schema:CreativeWork ;
+    myOnt:workTitle "Miss Saigon" .
+
+ex:Much_Ado_About_Nothing
+    a schema:CreativeWork ;
+    myOnt:workTitle "Much Ado About Nothing" .
+
+ex:My_One_And_Only
+    a schema:CreativeWork ;
+    myOnt:workTitle "My One And Only" .
+
+ex:Next_To_Normal
+    a schema:CreativeWork ;
+    myOnt:workTitle "Next To Normal" .
+
+ex:On_Your_Toes
+    a schema:CreativeWork ;
+    myOnt:workTitle "On Your Toes" .
+
+ex:Once
+    a schema:CreativeWork ;
+    myOnt:workTitle "Once" .
+
+ex:One_Man_Two_Guvnors
+    a schema:CreativeWork ;
+    myOnt:workTitle "One Man, Two Guvnors" .
+
+ex:Passion
+    a schema:CreativeWork ;
+    myOnt:workTitle "Passion" .
+
+ex:Pippin
+    a schema:CreativeWork ;
+    myOnt:workTitle "Pippin" .
+
+ex:Private_Lives
+    a schema:CreativeWork ;
+    myOnt:workTitle "Private Lives" .
+
+ex:Proof
+    a schema:CreativeWork ;
+    myOnt:workTitle "Proof" .
+
+ex:Rabbit_Hole
+    a schema:CreativeWork ;
+    myOnt:workTitle "Rabbit Hole" .
+
+ex:Shadowlands
+    a schema:CreativeWork ;
+    myOnt:workTitle "Shadowlands" .
+
+ex:She_Loves_Me
+    a schema:CreativeWork ;
+    myOnt:workTitle "She Loves Me" .
+
+ex:Shirley_Valentine
+    a schema:CreativeWork ;
+    myOnt:workTitle "Shirley Valentine" .
+
+ex:Song_and_Dance
+    a schema:CreativeWork ;
+    myOnt:workTitle "Song and Dance" .
+
+ex:South_Pacific
+    a schema:CreativeWork ;
+    myOnt:workTitle "South Pacific" .
+
+ex:Speed_the_Plow
+    a schema:CreativeWork ;
+    myOnt:workTitle "Speed-the-Plow" .
+
+ex:Sunset_Boulevard
+    a schema:CreativeWork ;
+    myOnt:workTitle "Sunset Boulevard" .
+
+ex:Sweet_Smell_of_Success
+    a schema:CreativeWork ;
+    myOnt:workTitle "Sweet Smell of Success" .
+
+ex:The_Audience
+    a schema:CreativeWork ;
+    myOnt:workTitle "The Audience" .
+
+ex:The_Beauty_Queen_of_Leenane
+    a schema:CreativeWork ;
+    myOnt:workTitle "The Beauty Queen of Leenane" .
+
+ex:The_Boy_From_Oz
+    a schema:CreativeWork ;
+    myOnt:workTitle "The Boy From Oz" .
+
+ex:The_Color_Purple
+    a schema:CreativeWork ;
+    myOnt:workTitle "The Color Purple" .
+
+ex:The_Curious_Incident_of_the_Dog_in_the_Night_Time
+    a schema:CreativeWork ;
+    myOnt:workTitle "The Curious Incident of the Dog in the Night-Time" .
+
+ex:The_Gershwins_Porgy_and_Bess
+    a schema:CreativeWork ;
+    myOnt:workTitle "The Gershwins' Porgy and Bess" .
+
+ex:The_Heiress
+    a schema:CreativeWork ;
+    myOnt:workTitle "The Heiress" .
+
+ex:The_History_Boys
+    a schema:CreativeWork ;
+    myOnt:workTitle "The History Boys" .
+
+ex:The_Invention_of_Love
+    a schema:CreativeWork ;
+    myOnt:workTitle "The Invention of Love" .
+
+ex:The_King_and_I
+    a schema:CreativeWork ;
+    myOnt:workTitle "The King and I" .
+
+ex:The_Life_and_Adventures_of_Nicholas_Nickleby
+    a schema:CreativeWork ;
+    myOnt:workTitle "The Life and Adventures of Nicholas Nickleby" .
+
+ex:The_Light_in_the_Piazza
+    a schema:CreativeWork ;
+    myOnt:workTitle "The Light in the Piazza" .
+
+ex:The_Little_Dog_Laughed
+    a schema:CreativeWork ;
+    myOnt:workTitle "The Little Dog Laughed" .
+
+ex:The_Mystery_of_Edwin_Drood
+    a schema:CreativeWork ;
+    myOnt:workTitle "The Mystery of Edwin Drood" .
+
+ex:The_Phantom_of_the_Opera
+    a schema:CreativeWork ;
+    myOnt:workTitle "The Phantom of the Opera" .
+
+ex:The_Producers
+    a schema:CreativeWork ;
+    myOnt:workTitle "The Producers" .
+
+ex:The_Real_Thing
+    a schema:CreativeWork ;
+    myOnt:workTitle "The Real Thing" .
+
+ex:The_Rink
+    a schema:CreativeWork ;
+    myOnt:workTitle "The Rink" .
+
+ex:The_Search_for_Signs_of_Intelligent_Life_in_the_Universe
+    a schema:CreativeWork ;
+    myOnt:workTitle "The Search for Signs of Intelligent Life in the Universe" .
+
+ex:The_Sisters_Rosensweig
+    a schema:CreativeWork ;
+    myOnt:workTitle "The Sisters Rosensweig" .
+
+ex:The_Trip_to_Bountiful
+    a schema:CreativeWork ;
+    myOnt:workTitle "The Trip to Bountiful" .
+
+ex:Thoroughly_Modern_Millie
+    a schema:CreativeWork ;
+    myOnt:workTitle "Thoroughly Modern Millie" .
+
+ex:Torch_Song_Trilogy
+    a schema:CreativeWork ;
+    myOnt:workTitle "Torch Song Trilogy" .
+
+ex:Tru
+    a schema:CreativeWork ;
+    myOnt:workTitle "Tru" .
+
+ex:Venus_in_Fur
+    a schema:CreativeWork ;
+    myOnt:workTitle "Venus in Fur" .
+
+ex:Who_s_Afraid_of_Virginia_Woolf
+    a schema:CreativeWork ;
+    myOnt:workTitle "Who's Afraid of Virginia Woolf?" .
+
+ex:Wicked
+    a schema:CreativeWork ;
+    myOnt:workTitle "Wicked" .
+
+# Award-winning records
+ex:Winning_1982_Best_Actor_in_a_Musical_Ben_Harney_001
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1982_Best_Actor_in_a_Musical_Ben_Harney_001" ;
+    myOnt:winner ex:Ben_Harney ;
+    myOnt:awardedForWork ex:Dreamgirls ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 1982 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_1982_Best_Actor_in_a_Play_Roger_Rees_002
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1982_Best_Actor_in_a_Play_Roger_Rees_002" ;
+    myOnt:winner ex:Roger_Rees ;
+    myOnt:awardedForWork ex:The_Life_and_Adventures_of_Nicholas_Nickleby ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Play ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 1982 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_1982_Best_Actress_in_a_Musical_Jennifer_Holliday_003
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1982_Best_Actress_in_a_Musical_Jennifer_Holliday_003" ;
+    myOnt:winner ex:Jennifer_Holliday ;
+    myOnt:awardedForWork ex:Dreamgirls ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 1982 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_1982_Best_Actress_in_a_Play_Zoe_Caldwell_004
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1982_Best_Actress_in_a_Play_Zoe_Caldwell_004" ;
+    myOnt:winner ex:Zoe_Caldwell ;
+    myOnt:awardedForWork ex:Medea ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Play ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 1982 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_1983_Best_Actor_in_a_Musical_Tommy_Tune_005
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1983_Best_Actor_in_a_Musical_Tommy_Tune_005" ;
+    myOnt:winner ex:Tommy_Tune ;
+    myOnt:awardedForWork ex:My_One_And_Only ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 1983 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_1983_Best_Actor_in_a_Play_Harvey_Fierstein_006
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1983_Best_Actor_in_a_Play_Harvey_Fierstein_006" ;
+    myOnt:winner ex:Harvey_Fierstein ;
+    myOnt:awardedForWork ex:Torch_Song_Trilogy ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Play ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 1983 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_1983_Best_Actress_in_a_Musical_Natalia_Makarova_007
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1983_Best_Actress_in_a_Musical_Natalia_Makarova_007" ;
+    myOnt:winner ex:Natalia_Makarova ;
+    myOnt:awardedForWork ex:On_Your_Toes ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 1983 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_1983_Best_Actress_in_a_Play_Jessica_Tandy_008
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1983_Best_Actress_in_a_Play_Jessica_Tandy_008" ;
+    myOnt:winner ex:Jessica_Tandy ;
+    myOnt:awardedForWork ex:Foxfire ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Play ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 1983 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_1984_Best_Actor_in_a_Musical_George_Hearn_009
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1984_Best_Actor_in_a_Musical_George_Hearn_009" ;
+    myOnt:winner ex:George_Hearn ;
+    myOnt:awardedForWork ex:La_Cage_aux_Folles ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 1984 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_1984_Best_Actor_in_a_Play_Jeremy_Irons_010
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1984_Best_Actor_in_a_Play_Jeremy_Irons_010" ;
+    myOnt:winner ex:Jeremy_Irons ;
+    myOnt:awardedForWork ex:The_Real_Thing ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Play ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 1984 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_1984_Best_Actress_in_a_Musical_Chita_Rivera_011
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1984_Best_Actress_in_a_Musical_Chita_Rivera_011" ;
+    myOnt:winner ex:Chita_Rivera ;
+    myOnt:awardedForWork ex:The_Rink ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 1984 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_1984_Best_Actress_in_a_Play_Glenn_Close_012
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1984_Best_Actress_in_a_Play_Glenn_Close_012" ;
+    myOnt:winner ex:Glenn_Close ;
+    myOnt:awardedForWork ex:The_Real_Thing ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Play ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 1984 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_1985_Best_Actor_in_a_Play_Derek_Jacobi_013
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1985_Best_Actor_in_a_Play_Derek_Jacobi_013" ;
+    myOnt:winner ex:Derek_Jacobi ;
+    myOnt:awardedForWork ex:Much_Ado_About_Nothing ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Play ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 1985 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_1985_Best_Actress_in_a_Play_Stockard_Channing_014
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1985_Best_Actress_in_a_Play_Stockard_Channing_014" ;
+    myOnt:winner ex:Stockard_Channing ;
+    myOnt:awardedForWork ex:Joe_Egg ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Play ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 1985 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_1986_Best_Actor_in_a_Musical_George_Rose_015
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1986_Best_Actor_in_a_Musical_George_Rose_015" ;
+    myOnt:winner ex:George_Rose ;
+    myOnt:awardedForWork ex:The_Mystery_of_Edwin_Drood ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 1986 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_1986_Best_Actor_in_a_Play_Judd_Hirsch_016
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1986_Best_Actor_in_a_Play_Judd_Hirsch_016" ;
+    myOnt:winner ex:Judd_Hirsch ;
+    myOnt:awardedForWork ex:I_m_Not_Rappaport ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Play ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 1986 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_1986_Best_Actress_in_a_Musical_Bernadette_Peters_017
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1986_Best_Actress_in_a_Musical_Bernadette_Peters_017" ;
+    myOnt:winner ex:Bernadette_Peters ;
+    myOnt:awardedForWork ex:Song_and_Dance ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 1986 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_1986_Best_Actress_in_a_Play_Lily_Tomlin_018
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1986_Best_Actress_in_a_Play_Lily_Tomlin_018" ;
+    myOnt:winner ex:Lily_Tomlin ;
+    myOnt:awardedForWork ex:The_Search_for_Signs_of_Intelligent_Life_in_the_Universe ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Play ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 1986 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_1987_Best_Actor_in_a_Musical_Robert_Lindsay_019
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1987_Best_Actor_in_a_Musical_Robert_Lindsay_019" ;
+    myOnt:winner ex:Robert_Lindsay ;
+    myOnt:awardedForWork ex:Me_and_My_Girl ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 1987 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_1987_Best_Actor_in_a_Play_James_Earl_Jones_020
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1987_Best_Actor_in_a_Play_James_Earl_Jones_020" ;
+    myOnt:winner ex:James_Earl_Jones ;
+    myOnt:awardedForWork ex:Fences ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Play ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 1987 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_1987_Best_Actress_in_a_Musical_Maryann_Plunkett_021
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1987_Best_Actress_in_a_Musical_Maryann_Plunkett_021" ;
+    myOnt:winner ex:Maryann_Plunkett ;
+    myOnt:awardedForWork ex:Me_and_My_Girl ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 1987 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_1987_Best_Actress_in_a_Play_Linda_Lavin_022
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1987_Best_Actress_in_a_Play_Linda_Lavin_022" ;
+    myOnt:winner ex:Linda_Lavin ;
+    myOnt:awardedForWork ex:Broadway_Bound ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Play ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 1987 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_1988_Best_Actor_in_a_Musical_Michael_Crawford_023
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1988_Best_Actor_in_a_Musical_Michael_Crawford_023" ;
+    myOnt:winner ex:Michael_Crawford ;
+    myOnt:awardedForWork ex:The_Phantom_of_the_Opera ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 1988 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_1988_Best_Actor_in_a_Play_Ron_Silver_024
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1988_Best_Actor_in_a_Play_Ron_Silver_024" ;
+    myOnt:winner ex:Ron_Silver ;
+    myOnt:awardedForWork ex:Speed_the_Plow ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Play ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 1988 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_1988_Best_Actress_in_a_Musical_Joanna_Gleason_025
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1988_Best_Actress_in_a_Musical_Joanna_Gleason_025" ;
+    myOnt:winner ex:Joanna_Gleason ;
+    myOnt:awardedForWork ex:Into_the_Woods ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 1988 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_1988_Best_Actress_in_a_Play_Joan_Allen_026
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1988_Best_Actress_in_a_Play_Joan_Allen_026" ;
+    myOnt:winner ex:Joan_Allen ;
+    myOnt:awardedForWork ex:Burn_This ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Play ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 1988 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_1989_Best_Actor_in_a_Musical_Jason_Alexander_027
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1989_Best_Actor_in_a_Musical_Jason_Alexander_027" ;
+    myOnt:winner ex:Jason_Alexander ;
+    myOnt:awardedForWork ex:Jerome_Robbins_Broadway ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 1989 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_1989_Best_Actor_in_a_Play_Philip_Bosco_028
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1989_Best_Actor_in_a_Play_Philip_Bosco_028" ;
+    myOnt:winner ex:Philip_Bosco ;
+    myOnt:awardedForWork ex:Lend_Me_a_Tenor ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Play ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 1989 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_1989_Best_Actress_in_a_Musical_Ruth_Brown_029
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1989_Best_Actress_in_a_Musical_Ruth_Brown_029" ;
+    myOnt:winner ex:Ruth_Brown ;
+    myOnt:awardedForWork ex:Black_and_Blue ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 1989 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_1989_Best_Actress_in_a_Play_Pauline_Collins_030
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1989_Best_Actress_in_a_Play_Pauline_Collins_030" ;
+    myOnt:winner ex:Pauline_Collins ;
+    myOnt:awardedForWork ex:Shirley_Valentine ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Play ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 1989 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_1990_Best_Actor_in_a_Musical_James_Naughton_031
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1990_Best_Actor_in_a_Musical_James_Naughton_031" ;
+    myOnt:winner ex:James_Naughton ;
+    myOnt:awardedForWork ex:City_of_Angels ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 1990 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_1990_Best_Actor_in_a_Play_Robert_Morse_032
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1990_Best_Actor_in_a_Play_Robert_Morse_032" ;
+    myOnt:winner ex:Robert_Morse ;
+    myOnt:awardedForWork ex:Tru ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Play ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 1990 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_1990_Best_Actress_in_a_Musical_Tyne_Daly_033
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1990_Best_Actress_in_a_Musical_Tyne_Daly_033" ;
+    myOnt:winner ex:Tyne_Daly ;
+    myOnt:awardedForWork ex:Gypsy ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 1990 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_1990_Best_Actress_in_a_Play_Maggie_Smith_034
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1990_Best_Actress_in_a_Play_Maggie_Smith_034" ;
+    myOnt:winner ex:Maggie_Smith ;
+    myOnt:awardedForWork ex:Lettice_and_Lovage ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Play ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 1990 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_1991_Best_Actor_in_a_Musical_Jonathan_Pryce_035
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1991_Best_Actor_in_a_Musical_Jonathan_Pryce_035" ;
+    myOnt:winner ex:Jonathan_Pryce ;
+    myOnt:awardedForWork ex:Miss_Saigon ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 1991 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_1991_Best_Actor_in_a_Play_Nigel_Hawthorne_036
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1991_Best_Actor_in_a_Play_Nigel_Hawthorne_036" ;
+    myOnt:winner ex:Nigel_Hawthorne ;
+    myOnt:awardedForWork ex:Shadowlands ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Play ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 1991 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_1991_Best_Actress_in_a_Musical_Lea_Salonga_037
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1991_Best_Actress_in_a_Musical_Lea_Salonga_037" ;
+    myOnt:winner ex:Lea_Salonga ;
+    myOnt:awardedForWork ex:Miss_Saigon ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 1991 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_1991_Best_Actress_in_a_Play_Mercedes_Ruhl_038
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1991_Best_Actress_in_a_Play_Mercedes_Ruhl_038" ;
+    myOnt:winner ex:Mercedes_Ruhl ;
+    myOnt:awardedForWork ex:Lost_in_Yonkers ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Play ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 1991 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_1992_Best_Actor_in_a_Musical_Gregory_Hines_039
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1992_Best_Actor_in_a_Musical_Gregory_Hines_039" ;
+    myOnt:winner ex:Gregory_Hines ;
+    myOnt:awardedForWork ex:Jelly_s_Last_Jam ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 1992 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_1992_Best_Actor_in_a_Play_Judd_Hirsch_040
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1992_Best_Actor_in_a_Play_Judd_Hirsch_040" ;
+    myOnt:winner ex:Judd_Hirsch ;
+    myOnt:awardedForWork ex:Conversations_With_My_Father ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Play ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 1992 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_1992_Best_Actress_in_a_Musical_Faith_Prince_041
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1992_Best_Actress_in_a_Musical_Faith_Prince_041" ;
+    myOnt:winner ex:Faith_Prince ;
+    myOnt:awardedForWork ex:Guys_and_Dolls ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 1992 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_1992_Best_Actress_in_a_Play_Glenn_Close_042
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1992_Best_Actress_in_a_Play_Glenn_Close_042" ;
+    myOnt:winner ex:Glenn_Close ;
+    myOnt:awardedForWork ex:Death_and_the_Maiden ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Play ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 1992 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_1993_Best_Actor_in_a_Musical_Brent_Carver_043
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1993_Best_Actor_in_a_Musical_Brent_Carver_043" ;
+    myOnt:winner ex:Brent_Carver ;
+    myOnt:awardedForWork ex:Kiss_of_the_Spider_Woman ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 1993 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_1993_Best_Actor_in_a_Play_Ron_Leibman_044
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1993_Best_Actor_in_a_Play_Ron_Leibman_044" ;
+    myOnt:winner ex:Ron_Leibman ;
+    myOnt:awardedForWork ex:Angels_in_America_Millennium_Approaches ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Play ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 1993 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_1993_Best_Actress_in_a_Musical_Chita_Rivera_045
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1993_Best_Actress_in_a_Musical_Chita_Rivera_045" ;
+    myOnt:winner ex:Chita_Rivera ;
+    myOnt:awardedForWork ex:Kiss_of_the_Spider_Woman ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 1993 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_1993_Best_Actress_in_a_Play_Madeline_Kahn_046
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1993_Best_Actress_in_a_Play_Madeline_Kahn_046" ;
+    myOnt:winner ex:Madeline_Kahn ;
+    myOnt:awardedForWork ex:The_Sisters_Rosensweig ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Play ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 1993 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_1994_Best_Actor_in_a_Musical_Boyd_Gaines_047
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1994_Best_Actor_in_a_Musical_Boyd_Gaines_047" ;
+    myOnt:winner ex:Boyd_Gaines ;
+    myOnt:awardedForWork ex:She_Loves_Me ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 1994 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_1994_Best_Actor_in_a_Play_Stephen_Spinella_048
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1994_Best_Actor_in_a_Play_Stephen_Spinella_048" ;
+    myOnt:winner ex:Stephen_Spinella ;
+    myOnt:awardedForWork ex:Angels_in_America_Perestroika ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Play ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 1994 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_1994_Best_Actress_in_a_Musical_Donna_Murphy_049
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1994_Best_Actress_in_a_Musical_Donna_Murphy_049" ;
+    myOnt:winner ex:Donna_Murphy ;
+    myOnt:awardedForWork ex:Passion ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 1994 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_1994_Best_Actress_in_a_Play_Diana_Rigg_050
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1994_Best_Actress_in_a_Play_Diana_Rigg_050" ;
+    myOnt:winner ex:Diana_Rigg ;
+    myOnt:awardedForWork ex:Medea ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Play ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 1994 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_1995_Best_Actor_in_a_Musical_Matthew_Broderick_051
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1995_Best_Actor_in_a_Musical_Matthew_Broderick_051" ;
+    myOnt:winner ex:Matthew_Broderick ;
+    myOnt:awardedForWork ex:How_to_Succeed_in_Business_Without_Really_Trying ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 1995 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_1995_Best_Actor_in_a_Play_Ralph_Fiennes_052
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1995_Best_Actor_in_a_Play_Ralph_Fiennes_052" ;
+    myOnt:winner ex:Ralph_Fiennes ;
+    myOnt:awardedForWork ex:Hamlet ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Play ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 1995 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_1995_Best_Actress_in_a_Musical_Glenn_Close_053
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1995_Best_Actress_in_a_Musical_Glenn_Close_053" ;
+    myOnt:winner ex:Glenn_Close ;
+    myOnt:awardedForWork ex:Sunset_Boulevard ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 1995 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_1995_Best_Actress_in_a_Play_Cherry_Jones_054
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1995_Best_Actress_in_a_Play_Cherry_Jones_054" ;
+    myOnt:winner ex:Cherry_Jones ;
+    myOnt:awardedForWork ex:The_Heiress ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Play ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 1995 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_1996_Best_Actor_in_a_Musical_Nathan_Lane_055
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1996_Best_Actor_in_a_Musical_Nathan_Lane_055" ;
+    myOnt:winner ex:Nathan_Lane ;
+    myOnt:awardedForWork ex:A_Funny_Thing_Happened_on_the_Way_to_the_Forum ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 1996 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_1996_Best_Actor_in_a_Play_George_Grizzard_056
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1996_Best_Actor_in_a_Play_George_Grizzard_056" ;
+    myOnt:winner ex:George_Grizzard ;
+    myOnt:awardedForWork ex:A_Delicate_Balance ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Play ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 1996 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_1996_Best_Actress_in_a_Musical_Donna_Murphy_057
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1996_Best_Actress_in_a_Musical_Donna_Murphy_057" ;
+    myOnt:winner ex:Donna_Murphy ;
+    myOnt:awardedForWork ex:The_King_and_I ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 1996 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_1996_Best_Actress_in_a_Play_Zoe_Caldwell_058
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1996_Best_Actress_in_a_Play_Zoe_Caldwell_058" ;
+    myOnt:winner ex:Zoe_Caldwell ;
+    myOnt:awardedForWork ex:Master_Class ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Play ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 1996 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_1997_Best_Actor_in_a_Musical_James_Naughton_059
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1997_Best_Actor_in_a_Musical_James_Naughton_059" ;
+    myOnt:winner ex:James_Naughton ;
+    myOnt:awardedForWork ex:Chicago ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 1997 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_1997_Best_Actor_in_a_Play_Christopher_Plummer_060
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1997_Best_Actor_in_a_Play_Christopher_Plummer_060" ;
+    myOnt:winner ex:Christopher_Plummer ;
+    myOnt:awardedForWork ex:Barrymore ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Play ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 1997 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_1997_Best_Actress_in_a_Musical_Bebe_Neuwirth_061
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1997_Best_Actress_in_a_Musical_Bebe_Neuwirth_061" ;
+    myOnt:winner ex:Bebe_Neuwirth ;
+    myOnt:awardedForWork ex:Chicago ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 1997 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_1997_Best_Actress_in_a_Play_Janet_McTeer_062
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1997_Best_Actress_in_a_Play_Janet_McTeer_062" ;
+    myOnt:winner ex:Janet_McTeer ;
+    myOnt:awardedForWork ex:A_Doll_s_House ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Play ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 1997 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_1998_Best_Actor_in_a_Musical_Alan_Cumming_063
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1998_Best_Actor_in_a_Musical_Alan_Cumming_063" ;
+    myOnt:winner ex:Alan_Cumming ;
+    myOnt:awardedForWork ex:Cabaret ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 1998 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_1998_Best_Actor_in_a_Play_Anthony_LaPaglia_064
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1998_Best_Actor_in_a_Play_Anthony_LaPaglia_064" ;
+    myOnt:winner ex:Anthony_LaPaglia ;
+    myOnt:awardedForWork ex:A_View_From_the_Bridge ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Play ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 1998 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_1998_Best_Actress_in_a_Musical_Natasha_Richardson_065
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1998_Best_Actress_in_a_Musical_Natasha_Richardson_065" ;
+    myOnt:winner ex:Natasha_Richardson ;
+    myOnt:awardedForWork ex:Cabaret ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 1998 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_1998_Best_Actress_in_a_Play_Maria_Mullen_066
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1998_Best_Actress_in_a_Play_Maria_Mullen_066" ;
+    myOnt:winner ex:Maria_Mullen ;
+    myOnt:awardedForWork ex:The_Beauty_Queen_of_Leenane ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Play ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 1998 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_1999_Best_Actor_in_a_Musical_Martin_Short_067
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1999_Best_Actor_in_a_Musical_Martin_Short_067" ;
+    myOnt:winner ex:Martin_Short ;
+    myOnt:awardedForWork ex:Little_Me ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 1999 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_1999_Best_Actor_in_a_Play_Brian_Dennehy_068
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1999_Best_Actor_in_a_Play_Brian_Dennehy_068" ;
+    myOnt:winner ex:Brian_Dennehy ;
+    myOnt:awardedForWork ex:Death_of_a_Salesman ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Play ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 1999 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_1999_Best_Actress_in_a_Musical_Bernadette_Peters_069
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1999_Best_Actress_in_a_Musical_Bernadette_Peters_069" ;
+    myOnt:winner ex:Bernadette_Peters ;
+    myOnt:awardedForWork ex:Annie_Get_Your_Gun ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 1999 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_1999_Best_Actress_in_a_Play_Judi_Dench_070
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_1999_Best_Actress_in_a_Play_Judi_Dench_070" ;
+    myOnt:winner ex:Judi_Dench ;
+    myOnt:awardedForWork ex:Amy_s_View ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Play ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 1999 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_2000_Best_Actor_in_a_Musical_Brian_Stokes_Mitchell_071
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2000_Best_Actor_in_a_Musical_Brian_Stokes_Mitchell_071" ;
+    myOnt:winner ex:Brian_Stokes_Mitchell ;
+    myOnt:awardedForWork ex:Kiss_Me_Kate ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 2000 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_2000_Best_Actor_in_a_Play_Stephen_Dillane_072
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2000_Best_Actor_in_a_Play_Stephen_Dillane_072" ;
+    myOnt:winner ex:Stephen_Dillane ;
+    myOnt:awardedForWork ex:The_Real_Thing ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Play ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 2000 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_2000_Best_Actress_in_a_Musical_Heather_Headley_073
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2000_Best_Actress_in_a_Musical_Heather_Headley_073" ;
+    myOnt:winner ex:Heather_Headley ;
+    myOnt:awardedForWork ex:Aida ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 2000 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_2000_Best_Actress_in_a_Play_Jennifer_Ehle_074
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2000_Best_Actress_in_a_Play_Jennifer_Ehle_074" ;
+    myOnt:winner ex:Jennifer_Ehle ;
+    myOnt:awardedForWork ex:The_Real_Thing ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Play ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 2000 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_2001_Best_Actor_in_a_Musical_Nathan_Lane_075
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2001_Best_Actor_in_a_Musical_Nathan_Lane_075" ;
+    myOnt:winner ex:Nathan_Lane ;
+    myOnt:awardedForWork ex:The_Producers ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 2001 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_2001_Best_Actor_in_a_Play_Richard_Easton_076
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2001_Best_Actor_in_a_Play_Richard_Easton_076" ;
+    myOnt:winner ex:Richard_Easton ;
+    myOnt:awardedForWork ex:The_Invention_of_Love ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Play ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 2001 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_2001_Best_Actress_in_a_Musical_Christine_Ebersole_077
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2001_Best_Actress_in_a_Musical_Christine_Ebersole_077" ;
+    myOnt:winner ex:Christine_Ebersole ;
+    myOnt:awardedForWork ex:R_42nd_Street ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 2001 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_2001_Best_Actress_in_a_Play_Maria_Luisa_Parker_078
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2001_Best_Actress_in_a_Play_Maria_Luisa_Parker_078" ;
+    myOnt:winner ex:Maria_Luisa_Parker ;
+    myOnt:awardedForWork ex:Proof ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Play ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 2001 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_2002_Best_Actor_in_a_Musical_John_Lithgow_079
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2002_Best_Actor_in_a_Musical_John_Lithgow_079" ;
+    myOnt:winner ex:John_Lithgow ;
+    myOnt:awardedForWork ex:Sweet_Smell_of_Success ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 2002 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_2002_Best_Actor_in_a_Play_Alan_Bates_080
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2002_Best_Actor_in_a_Play_Alan_Bates_080" ;
+    myOnt:winner ex:Alan_Bates ;
+    myOnt:awardedForWork ex:Fortune_s_Fool ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Play ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 2002 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_2002_Best_Actress_in_a_Musical_Sutton_Foster_081
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2002_Best_Actress_in_a_Musical_Sutton_Foster_081" ;
+    myOnt:winner ex:Sutton_Foster ;
+    myOnt:awardedForWork ex:Thoroughly_Modern_Millie ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 2002 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_2002_Best_Actress_in_a_Play_Lindsay_Duncan_082
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2002_Best_Actress_in_a_Play_Lindsay_Duncan_082" ;
+    myOnt:winner ex:Lindsay_Duncan ;
+    myOnt:awardedForWork ex:Private_Lives ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Play ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 2002 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_2003_Best_Actor_in_a_Musical_Harvey_Fierstein_083
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2003_Best_Actor_in_a_Musical_Harvey_Fierstein_083" ;
+    myOnt:winner ex:Harvey_Fierstein ;
+    myOnt:awardedForWork ex:Hairspray ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 2003 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_2003_Best_Actor_in_a_Play_Brian_Dennehy_084
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2003_Best_Actor_in_a_Play_Brian_Dennehy_084" ;
+    myOnt:winner ex:Brian_Dennehy ;
+    myOnt:awardedForWork ex:Long_Day_s_Journey_Into_Night ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Play ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 2003 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_2003_Best_Actress_in_a_Musical_Marissa_Jaret_Winokur_085
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2003_Best_Actress_in_a_Musical_Marissa_Jaret_Winokur_085" ;
+    myOnt:winner ex:Marissa_Jaret_Winokur ;
+    myOnt:awardedForWork ex:Hairspray ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 2003 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_2003_Best_Actress_in_a_Play_Vanessa_Redgrave_086
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2003_Best_Actress_in_a_Play_Vanessa_Redgrave_086" ;
+    myOnt:winner ex:Vanessa_Redgrave ;
+    myOnt:awardedForWork ex:Long_Day_s_Journey_Into_Night ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Play ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 2003 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_2004_Best_Actor_in_a_Musical_Hugh_Jackman_087
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2004_Best_Actor_in_a_Musical_Hugh_Jackman_087" ;
+    myOnt:winner ex:Hugh_Jackman ;
+    myOnt:awardedForWork ex:The_Boy_From_Oz ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 2004 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_2004_Best_Actor_in_a_Play_Jefferson_Mays_088
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2004_Best_Actor_in_a_Play_Jefferson_Mays_088" ;
+    myOnt:winner ex:Jefferson_Mays ;
+    myOnt:awardedForWork ex:I_Am_My_Own_Wife ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Play ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 2004 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_2004_Best_Actress_in_a_Musical_Idina_Menzel_089
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2004_Best_Actress_in_a_Musical_Idina_Menzel_089" ;
+    myOnt:winner ex:Idina_Menzel ;
+    myOnt:awardedForWork ex:Wicked ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 2004 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_2004_Best_Actress_in_a_Play_Phylicia_Rashad_090
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2004_Best_Actress_in_a_Play_Phylicia_Rashad_090" ;
+    myOnt:winner ex:Phylicia_Rashad ;
+    myOnt:awardedForWork ex:A_Raisin_in_the_Sun ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Play ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 2004 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_2005_Best_Actor_in_a_Musical_Norbert_Leo_Butz_091
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2005_Best_Actor_in_a_Musical_Norbert_Leo_Butz_091" ;
+    myOnt:winner ex:Norbert_Leo_Butz ;
+    myOnt:awardedForWork ex:Dirty_Rotten_Scoundrels ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 2005 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_2005_Best_Actor_in_a_Play_Bill_Irwin_092
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2005_Best_Actor_in_a_Play_Bill_Irwin_092" ;
+    myOnt:winner ex:Bill_Irwin ;
+    myOnt:awardedForWork ex:Who_s_Afraid_of_Virginia_Woolf ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Play ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 2005 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_2005_Best_Actress_in_a_Musical_Victoria_Clark_093
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2005_Best_Actress_in_a_Musical_Victoria_Clark_093" ;
+    myOnt:winner ex:Victoria_Clark ;
+    myOnt:awardedForWork ex:The_Light_in_the_Piazza ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 2005 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_2005_Best_Actress_in_a_Play_Cherry_Jones_094
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2005_Best_Actress_in_a_Play_Cherry_Jones_094" ;
+    myOnt:winner ex:Cherry_Jones ;
+    myOnt:awardedForWork ex:Doubt ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Play ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 2005 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_2006_Best_Actor_in_a_Musical_John_Lloyd_Young_095
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2006_Best_Actor_in_a_Musical_John_Lloyd_Young_095" ;
+    myOnt:winner ex:John_Lloyd_Young ;
+    myOnt:awardedForWork ex:Jersey_Boys ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 2006 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_2006_Best_Actor_in_a_Play_Richard_Griffiths_096
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2006_Best_Actor_in_a_Play_Richard_Griffiths_096" ;
+    myOnt:winner ex:Richard_Griffiths ;
+    myOnt:awardedForWork ex:The_History_Boys ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Play ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 2006 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_2006_Best_Actress_in_a_Musical_LaChanze_097
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2006_Best_Actress_in_a_Musical_LaChanze_097" ;
+    myOnt:winner ex:LaChanze ;
+    myOnt:awardedForWork ex:The_Color_Purple ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 2006 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_2006_Best_Actress_in_a_Play_Cynthia_Nixon_098
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2006_Best_Actress_in_a_Play_Cynthia_Nixon_098" ;
+    myOnt:winner ex:Cynthia_Nixon ;
+    myOnt:awardedForWork ex:Rabbit_Hole ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Play ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 2006 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_2007_Best_Actor_in_a_Musical_David_Hyde_Pierce_099
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2007_Best_Actor_in_a_Musical_David_Hyde_Pierce_099" ;
+    myOnt:winner ex:David_Hyde_Pierce ;
+    myOnt:awardedForWork ex:Curtains ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 2007 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_2007_Best_Actor_in_a_Play_Frank_Langella_100
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2007_Best_Actor_in_a_Play_Frank_Langella_100" ;
+    myOnt:winner ex:Frank_Langella ;
+    myOnt:awardedForWork ex:Frost_Nixon ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Play ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 2007 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_2007_Best_Actress_in_a_Musical_Christine_Ebersole_101
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2007_Best_Actress_in_a_Musical_Christine_Ebersole_101" ;
+    myOnt:winner ex:Christine_Ebersole ;
+    myOnt:awardedForWork ex:Grey_Gardens ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 2007 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_2007_Best_Actress_in_a_Play_Julie_White_102
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2007_Best_Actress_in_a_Play_Julie_White_102" ;
+    myOnt:winner ex:Julie_White ;
+    myOnt:awardedForWork ex:The_Little_Dog_Laughed ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Play ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 2007 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_2008_Best_Actor_in_a_Musical_Paulo_Szot_103
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2008_Best_Actor_in_a_Musical_Paulo_Szot_103" ;
+    myOnt:winner ex:Paulo_Szot ;
+    myOnt:awardedForWork ex:South_Pacific ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 2008 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_2008_Best_Actor_in_a_Play_Mark_Rylance_104
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2008_Best_Actor_in_a_Play_Mark_Rylance_104" ;
+    myOnt:winner ex:Mark_Rylance ;
+    myOnt:awardedForWork ex:Boeing_Boeing ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Play ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 2008 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_2008_Best_Actress_in_a_Musical_Patti_LuPone_105
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2008_Best_Actress_in_a_Musical_Patti_LuPone_105" ;
+    myOnt:winner ex:Patti_LuPone ;
+    myOnt:awardedForWork ex:Gypsy ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 2008 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_2008_Best_Actress_in_a_Play_Deanna_Dunagan_106
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2008_Best_Actress_in_a_Play_Deanna_Dunagan_106" ;
+    myOnt:winner ex:Deanna_Dunagan ;
+    myOnt:awardedForWork ex:August_Osage_County ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Play ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 2008 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_2009_Best_Actor_in_a_Musical_David_Alvarez_107
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2009_Best_Actor_in_a_Musical_David_Alvarez_107" ;
+    myOnt:winner ex:David_Alvarez ;
+    myOnt:awardedForWork ex:Billy_Elliot_The_Musical ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 2009 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_2009_Best_Actor_in_a_Play_Geoffrey_Rush_108
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2009_Best_Actor_in_a_Play_Geoffrey_Rush_108" ;
+    myOnt:winner ex:Geoffrey_Rush ;
+    myOnt:awardedForWork ex:Exit_the_King ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Play ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 2009 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_2009_Best_Actress_in_a_Musical_Alice_Ripley_109
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2009_Best_Actress_in_a_Musical_Alice_Ripley_109" ;
+    myOnt:winner ex:Alice_Ripley ;
+    myOnt:awardedForWork ex:Next_To_Normal ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 2009 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_2009_Best_Actress_in_a_Play_Marcia_Gay_Harden_110
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2009_Best_Actress_in_a_Play_Marcia_Gay_Harden_110" ;
+    myOnt:winner ex:Marcia_Gay_Harden ;
+    myOnt:awardedForWork ex:God_of_Carnage ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Play ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 2009 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_2010_Best_Actor_in_a_Musical_Douglas_Hodge_111
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2010_Best_Actor_in_a_Musical_Douglas_Hodge_111" ;
+    myOnt:winner ex:Douglas_Hodge ;
+    myOnt:awardedForWork ex:La_Cage_aux_Folles ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 2010 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_2010_Best_Actor_in_a_Play_Denzel_Washington_112
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2010_Best_Actor_in_a_Play_Denzel_Washington_112" ;
+    myOnt:winner ex:Denzel_Washington ;
+    myOnt:awardedForWork ex:Fences ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Play ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 2010 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_2010_Best_Actress_in_a_Musical_Catherine_Zeta_Jones_113
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2010_Best_Actress_in_a_Musical_Catherine_Zeta_Jones_113" ;
+    myOnt:winner ex:Catherine_Zeta_Jones ;
+    myOnt:awardedForWork ex:A_Little_Night_Music ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 2010 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_2010_Best_Actress_in_a_Play_Viola_Davis_114
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2010_Best_Actress_in_a_Play_Viola_Davis_114" ;
+    myOnt:winner ex:Viola_Davis ;
+    myOnt:awardedForWork ex:Fences ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Play ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 2010 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_2011_Best_Actor_in_a_Musical_Norbert_Leo_Butz_115
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2011_Best_Actor_in_a_Musical_Norbert_Leo_Butz_115" ;
+    myOnt:winner ex:Norbert_Leo_Butz ;
+    myOnt:awardedForWork ex:Catch_Me_If_You_Can ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 2011 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_2011_Best_Actor_in_a_Play_Mark_Rylance_116
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2011_Best_Actor_in_a_Play_Mark_Rylance_116" ;
+    myOnt:winner ex:Mark_Rylance ;
+    myOnt:awardedForWork ex:Jerusalem ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Play ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 2011 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_2011_Best_Actress_in_a_Musical_Sutton_Foster_117
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2011_Best_Actress_in_a_Musical_Sutton_Foster_117" ;
+    myOnt:winner ex:Sutton_Foster ;
+    myOnt:awardedForWork ex:Anything_Goes ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 2011 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_2011_Best_Actress_in_a_Play_Frances_McDormand_118
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2011_Best_Actress_in_a_Play_Frances_McDormand_118" ;
+    myOnt:winner ex:Frances_McDormand ;
+    myOnt:awardedForWork ex:Good_People ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Play ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 2011 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_2012_Best_Actor_in_a_Musical_Steve_Kazee_119
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2012_Best_Actor_in_a_Musical_Steve_Kazee_119" ;
+    myOnt:winner ex:Steve_Kazee ;
+    myOnt:awardedForWork ex:Once ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 2012 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_2012_Best_Actor_in_a_Play_James_Corden_120
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2012_Best_Actor_in_a_Play_James_Corden_120" ;
+    myOnt:winner ex:James_Corden ;
+    myOnt:awardedForWork ex:One_Man_Two_Guvnors ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Play ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 2012 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_2012_Best_Actress_in_a_Musical_Audra_McDonald_121
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2012_Best_Actress_in_a_Musical_Audra_McDonald_121" ;
+    myOnt:winner ex:Audra_McDonald ;
+    myOnt:awardedForWork ex:The_Gershwins_Porgy_and_Bess ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 2012 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_2012_Best_Actress_in_a_Play_Nina_Arianda_122
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2012_Best_Actress_in_a_Play_Nina_Arianda_122" ;
+    myOnt:winner ex:Nina_Arianda ;
+    myOnt:awardedForWork ex:Venus_in_Fur ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Play ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 2012 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_2013_Best_Actor_in_a_Musical_Billy_Porter_123
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2013_Best_Actor_in_a_Musical_Billy_Porter_123" ;
+    myOnt:winner ex:Billy_Porter ;
+    myOnt:awardedForWork ex:Kinky_Boots ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 2013 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_2013_Best_Actor_in_a_Play_Tracy_Letts_124
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2013_Best_Actor_in_a_Play_Tracy_Letts_124" ;
+    myOnt:winner ex:Tracy_Letts ;
+    myOnt:awardedForWork ex:Who_s_Afraid_of_Virginia_Woolf ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Play ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 2013 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_2013_Best_Actress_in_a_Musical_Patina_Miller_125
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2013_Best_Actress_in_a_Musical_Patina_Miller_125" ;
+    myOnt:winner ex:Patina_Miller ;
+    myOnt:awardedForWork ex:Pippin ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 2013 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_2013_Best_Actress_in_a_Play_Cicely_Tyson_126
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2013_Best_Actress_in_a_Play_Cicely_Tyson_126" ;
+    myOnt:winner ex:Cicely_Tyson ;
+    myOnt:awardedForWork ex:The_Trip_to_Bountiful ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Play ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 2013 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_2014_Best_Actor_in_a_Musical_Neil_Patrick_Harris_127
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2014_Best_Actor_in_a_Musical_Neil_Patrick_Harris_127" ;
+    myOnt:winner ex:Neil_Patrick_Harris ;
+    myOnt:awardedForWork ex:Hedwig_and_the_Angry_Inch ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 2014 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_2014_Best_Actor_in_a_Play_Bryan_Cranston_128
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2014_Best_Actor_in_a_Play_Bryan_Cranston_128" ;
+    myOnt:winner ex:Bryan_Cranston ;
+    myOnt:awardedForWork ex:All_The_Way ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Play ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 2014 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_2014_Best_Actress_in_a_Musical_Jessie_Mueller_129
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2014_Best_Actress_in_a_Musical_Jessie_Mueller_129" ;
+    myOnt:winner ex:Jessie_Mueller ;
+    myOnt:awardedForWork ex:Beautiful_The_Carole_King_Musical ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 2014 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_2014_Best_Actress_in_a_Play_Audra_McDonald_130
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2014_Best_Actress_in_a_Play_Audra_McDonald_130" ;
+    myOnt:winner ex:Audra_McDonald ;
+    myOnt:awardedForWork ex:Lady_Day_at_Emerson_s_Bar_and_Grill ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Play ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 2014 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_2015_Best_Actor_in_a_Musical_Michael_Cerveris_131
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2015_Best_Actor_in_a_Musical_Michael_Cerveris_131" ;
+    myOnt:winner ex:Michael_Cerveris ;
+    myOnt:awardedForWork ex:Fun_Home ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 2015 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_2015_Best_Actor_in_a_Play_Alex_Sharp_132
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2015_Best_Actor_in_a_Play_Alex_Sharp_132" ;
+    myOnt:winner ex:Alex_Sharp ;
+    myOnt:awardedForWork ex:The_Curious_Incident_of_the_Dog_in_the_Night_Time ;
+    myOnt:hasAwardCategory ex:Best_Actor_in_a_Play ;
+    myOnt:hasGenderCategory ex:Masculine ;
+    myOnt:awardYear 2015 ;
+    myOnt:genderCategory "masculina" .
+
+ex:Winning_2015_Best_Actress_in_a_Musical_Kelli_O_Hara_133
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2015_Best_Actress_in_a_Musical_Kelli_O_Hara_133" ;
+    myOnt:winner ex:Kelli_O_Hara ;
+    myOnt:awardedForWork ex:The_King_and_I ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Musical ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 2015 ;
+    myOnt:genderCategory "femenina" .
+
+ex:Winning_2015_Best_Actress_in_a_Play_Helen_Mirren_134
+    a myOnt:AwardWinning ;
+    myOnt:recordIdentifier "Winning_2015_Best_Actress_in_a_Play_Helen_Mirren_134" ;
+    myOnt:winner ex:Helen_Mirren ;
+    myOnt:awardedForWork ex:The_Audience ;
+    myOnt:hasAwardCategory ex:Best_Actress_in_a_Play ;
+    myOnt:hasGenderCategory ex:Feminine ;
+    myOnt:awardYear 2015 ;
+    myOnt:genderCategory "femenina" .
